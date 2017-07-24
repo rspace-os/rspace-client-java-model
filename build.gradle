@@ -4,7 +4,7 @@ apply plugin: 'maven'
 apply plugin: 'eclipse'
 group = 'com.researchspace'
 sourceCompatibility = 1.8
-version = '1.1.0'
+version = '1.1.0-SNAPSHOT'
 
 def jacksonVersion='2.6.7'
 
