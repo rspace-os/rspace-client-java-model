@@ -7,7 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Singular;
 /**
- * Models the request body of a /documents POST request
+ * Models the request body of a /documents POST request. All content is optional.
+ * If a form ID is set then the field content must match the field types defined by the Form
  * @author rspace
  * @since 1.1.0
  *
