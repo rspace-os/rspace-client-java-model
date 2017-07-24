@@ -28,9 +28,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -43,44 +40,24 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 @ToString(callSuper = true, of={ "type", "lastModified"})
-@JsonPropertyOrder(value={"id", "globalId", "name", "lastModified", "type",  "content", "files", "_links"})
 public class Field extends IdentifiableNameable {
 
-    @JsonProperty("type")
     private TypeEnum type = null;
-
-    @JsonProperty("content")
     private String content = null;
-
-    @JsonProperty("lastModified")
     private Date lastModified = null;
-
-    @JsonProperty("files")
     private List<ApiFile> files = new ArrayList<>();
 
     /**
      * The data type of this field
      */
     public enum TypeEnum {
-        @JsonProperty("string")
-        STRING("string"),
-
-        @JsonProperty("text")
+       
+       STRING("string"),
         TEXT("text"),
-
-        @JsonProperty("choice")
         CHOICE("choice"),
-
-        @JsonProperty("radio")
         RADIO("radio"),
-
-        @JsonProperty("date")
         DATE("date"),
-
-        @JsonProperty("number")
         NUMBER("number"),
-
-        @JsonProperty("time")
         TIME("time");
 
         private String value;

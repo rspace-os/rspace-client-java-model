@@ -24,8 +24,6 @@
 
 package com.researchspace.api.clientmodel;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -45,10 +43,7 @@ public class LinkItem {
     public static final String SELF_REL = "self";
     public static final String ENCLOSURE_REL = "enclosure";
     
-    @JsonProperty("link")
     private String link = null;
-
-    @JsonProperty("rel")
     private String rel = null;
 
 }

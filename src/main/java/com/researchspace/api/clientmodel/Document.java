@@ -27,9 +27,6 @@ package com.researchspace.api.clientmodel;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -44,7 +41,6 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Document extends DocumentInfo {
 
-    @JsonProperty("fields")
     private List<Field> fields = new ArrayList<>();
     
 }

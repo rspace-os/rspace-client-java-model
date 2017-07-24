@@ -26,9 +26,6 @@ package com.researchspace.api.clientmodel;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
@@ -37,10 +34,8 @@ import lombok.Value;
  */
 @Value
 @EqualsAndHashCode(callSuper=true)
-@JsonPropertyOrder({"totalHits", "pageNumber", "documents", "_links"})
 public class DocumentSearchResult extends PaginatedResultList {
-    
-    @JsonProperty("documents")
+
     private List<DocumentInfo> documents = null;
 
 }
