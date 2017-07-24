@@ -8,6 +8,7 @@ import lombok.Singular;
 /**
  * Models the request body of a /documents POST request
  * @author rspace
+ * @since 1.1.0
  *
  */
 @Data
