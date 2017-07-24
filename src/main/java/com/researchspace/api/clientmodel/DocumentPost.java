@@ -1,5 +1,6 @@
 package com.researchspace.api.clientmodel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Builder;
@@ -15,10 +16,18 @@ import lombok.Singular;
 @Builder
 public class DocumentPost {
 
-	private String tags;	
+	/**
+	 * Comma separated tags
+	 */
+	private String tags;
+	/**
+	 * name of document
+	 */
 	private String name;
 	@Singular
 	private List<FieldPost> fields;
+	
+	private FormRef form;
 	
 	/**
 	 * Appends a {@link FieldPost} to the list of Fields
@@ -26,6 +35,9 @@ public class DocumentPost {
 	 * @return
 	 */
 	public boolean addField(FieldPost toAdd) {
+		if(fields == null) {
+			fields = new ArrayList<>();
+		}
 		return fields.add(toAdd);
 	}
 }

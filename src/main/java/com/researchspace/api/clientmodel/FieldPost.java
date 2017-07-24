@@ -9,6 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FieldPost {
 	
-	private String content;
+	/**
+	 * Convenience method to return an empty FieldPost
+	 * @return
+	 */
+	public static FieldPost emptyField () {
+		return new FieldPost("");
+	}
+	
+	private String content="";
 
 }
