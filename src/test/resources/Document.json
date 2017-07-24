@@ -1,0 +1,87 @@
+{
+  "id": 23,
+  "globalId": "SD23",
+  "name": "MyExperiment",
+  "created": "2016-11-09T00:00:00.000Z",
+  "lastModified": "2016-11-10T00:00:00.000Z",
+  "parentFolderId": 12,
+  "signed": false,
+  "tags": "tag1, tag2",
+  "form": {
+    "id": 123,
+    "globalId": "FM123",
+    "name": "Experiment",
+    "stableId": "abcde",
+    "version": 6
+  },
+  "owner": {
+    "id": 1,
+    "username": "bsmith",
+    "email": "bsmith@somewhere.com",
+    "firstName": "Bob",
+    "lastName": "Smith"
+  },
+  "fields": [
+    {
+      "id": 32,
+      "globalId": "FD32",
+      "name": "Method",
+      "lastModified": "2016-11-10T11:04:13.047Z",
+      "type": "text",
+      "content": "<p> Add 2ul 50uM EDTA to Xenopus egg extract. <p> See <a href=\"https://a.b.com\">here</a>",
+      "files": [
+        {
+          "id": 33,
+          "globalId": "GL33",
+          "name": "Worddocument.doc",
+          "caption": "PCR prep for Xenopus oocyte cDNA",
+          "contentType": "application/msword",
+          "size": 1234789,
+          "_links": [
+            {
+              "link": "https://myrspace.com/api/v1/files/33",
+              "rel": "self"
+            },
+            {
+              "link": "https://myrspace.com/api/v1/files/33/file",
+              "rel": "enclosure"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "globalId": "GL24",
+          "name": "EquipmentSetup.png",
+          "caption": null,
+          "contentType": "image/png",
+          "size": 23964,
+          "_links": [
+            {
+              "link": "https://myrspace.com/api/v1/files/24",
+              "rel": "self"
+            },
+            {
+              "link": "https://myrspace.com/api/v1/files/24/file",
+              "rel": "enclosure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "globalId": "FD33",
+      "name": "Results",
+      "lastModified": "2016-11-02T11:04:11.047Z",
+      "type": "text",
+      "content": " <ul><li>Observation 1 <li> Observation 2 <li>Observation 3 </ul>",
+      "files": null
+    }
+  ],
+  "_links": [
+    {
+      "link": "https://myrspace.com/api/v1/documents/23",
+      "rel": "self"
+    }
+  ]
+}

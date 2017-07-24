@@ -14,10 +14,6 @@ repositories {
 
 
 dependencies {
-	
-	compile 'com.fasterxml.jackson.core:jackson-annotations:'+jacksonVersion
-	compile 'com.fasterxml.jackson.core:jackson-core:'+jacksonVersion
-	compile 'com.fasterxml.jackson.core:jackson-databind:'+jacksonVersion
 	  
 	compile 'org.projectlombok:lombok:1.16.16'
 	compile 'commons-lang:commons-lang:2.6'
@@ -25,6 +21,9 @@ dependencies {
  
 	testCompile   'junit:junit:4.12'
 	testCompile   'org.slf4j:slf4j-simple:1.7.21'
+	testCompile 'com.fasterxml.jackson.core:jackson-annotations:'+jacksonVersion
+	testCompile 'com.fasterxml.jackson.core:jackson-core:'+jacksonVersion
+	testCompile 'com.fasterxml.jackson.core:jackson-databind:'+jacksonVersion
 }
 
 test{
