@@ -1,0 +1,19 @@
+{
+  "id": 33,
+  "globalId": "GL33",
+  "name": "Worddocument.doc",
+  "caption": "PCR protocol for Xenopus cDNA prep.",
+  "contentType": "application/msword",
+  "created": "2012-12-12",
+  "size": 1234789,
+  "_links": [
+    {
+      "link": "https://myrspace.com/api/v1/files/33",
+      "rel": "self"
+    },
+    {
+      "link": "https://myrspace.com/api/v1/files/33/file",
+      "rel": "enclosure"
+    }
+  ]
+}

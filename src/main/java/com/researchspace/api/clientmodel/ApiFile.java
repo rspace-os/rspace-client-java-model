@@ -24,6 +24,8 @@
 
 package com.researchspace.api.clientmodel;
 
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -39,5 +41,6 @@ public class ApiFile extends IdentifiableNameable {
     private String contentType = null;
     private Long size = null;
     private String caption;
+    private Date created;
     
 }

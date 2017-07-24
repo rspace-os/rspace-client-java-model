@@ -1,6 +1,6 @@
 package com.researchspace.api.clientmodel;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,11 +11,10 @@ import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class DocumentTest extends AbstractModelTest {
-	
-	File documentJson = new File("src/test/resources/Document.json");
+public class FileTest extends AbstractModelTest {
+
+	File documentJson = new File("src/test/resources/File.json");
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,9 +26,8 @@ public class DocumentTest extends AbstractModelTest {
 
 	@Test
 	public void test() throws JsonParseException, JsonMappingException, IOException {
-		Document d = readFileToClass(documentJson, Document.class);
-		assertEquals(2,d.getFields().size());
-		System.err.println(d);
+		ApiFile file = readFileToClass(documentJson, ApiFile.class);
+		assertNotNull(file.getCaption());
 	}
 
 }
