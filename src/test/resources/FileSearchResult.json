@@ -1,0 +1,70 @@
+{
+  "totalHits" : 8,
+  "pageNumber" : 0,
+  "files":[
+  {
+    "id": 1246,
+    "globalId": "GL1246",
+    "name": "lemmings.gif",
+    "caption": "TexasRed/Hoechst/FITC",
+    "contentType": "image/gif",
+    "created": "2017-02-02",
+    "size": 7348,
+    "_links": [
+      {
+        "link": "https://myrspace.com/api/v1/files/1246",
+        "rel": "self"
+      },
+      {
+        "link": "https://myrspace.com/api/v1/files/1246/file",
+        "rel": "enclosure"
+      }
+    ]
+  },
+  {
+    "id": 1245,
+    "globalId": "GL1245",
+    "name": "anaphase.jpg",
+    "caption": "TexasRed/Hoechst/FITC",
+    "contentType": "image/jpeg",
+    "created": "2016-11-07T13:07:57.000Z",
+    "size": 14426,
+    "_links": [
+      {
+        "link": "https://myrspace.com/api/v1/files/1245",
+        "rel": "self"
+      },
+      {
+        "link": "https://myrspace.com/api/v1/files/1245/file",
+        "rel": "enclosure"
+      }
+    ]
+  },
+  {
+    "id": 1231,
+    "globalId": "GL1231",
+    "name": "Picture1.png",
+    "caption": "test image uploaded from mobile.",
+    "contentType": "image/x-png",
+    "created": "2016-12-05T13:07:57.000Z",
+    "size": 40721,
+    "_links": [
+      {
+        "link": "https://myrspace.com/api/v1/files/1231",
+        "rel": "self"
+      },
+      {
+        "link": "https://myrspace.com/api/v1/files/1231/file",
+        "rel": "enclosure"
+      }
+    ]
+  }
+],
+"_links":
+[
+  {
+    "link": "https://myrspace.com/api/v1/files?pageNumber=0&mediaType=image",
+    "rel": "self"
+  }
+]
+}

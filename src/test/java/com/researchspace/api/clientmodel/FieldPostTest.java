@@ -20,7 +20,7 @@ public class FieldPostTest {
 
 	@Test
 	public void testAppendFileReference() {
-		assertEquals("some content <fileId=123/>", fieldPost.appendFileReference(123L));
+		assertEquals("some content <fileId=123>", fieldPost.appendFileReference(123L));
 	}
 
 }
