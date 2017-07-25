@@ -27,6 +27,7 @@ package com.researchspace.api.clientmodel;
 import java.util.List;
 
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.Value;
 
 /**
@@ -34,6 +35,7 @@ import lombok.Value;
  */
 @Value
 @EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
 public class DocumentSearchResult extends PaginatedResultList {
 
     private List<DocumentInfo> documents = null;

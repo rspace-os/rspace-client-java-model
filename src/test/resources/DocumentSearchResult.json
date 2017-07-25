@@ -1,0 +1,233 @@
+{
+  "totalHits" : 8,
+  "pageNumber" : 0,
+  "documents" : [ {
+    "id" : 476,
+    "globalId" : "SD476",
+    "name" : "Other document",
+    "created" : "2017-07-25T09:37:23.970Z",
+    "lastModified" : "2017-07-25T09:37:23.970Z",
+    "parentFolderId" : 468,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 1,
+      "globalId" : "FM1",
+      "name" : "Experiment",
+      "stableId" : "1500968372940null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/476",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 474,
+    "globalId" : "SD474",
+    "name" : "Entry 3",
+    "created" : "2017-07-25T09:37:23.956Z",
+    "lastModified" : "2017-07-25T09:37:23.957Z",
+    "parentFolderId" : 471,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 3,
+      "globalId" : "FM3",
+      "name" : "Basic Document",
+      "stableId" : "1500968373218null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/474",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 473,
+    "globalId" : "SD473",
+    "name" : "Entry 2",
+    "created" : "2017-07-25T09:37:23.954Z",
+    "lastModified" : "2017-07-25T09:37:23.954Z",
+    "parentFolderId" : 471,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 3,
+      "globalId" : "FM3",
+      "name" : "Basic Document",
+      "stableId" : "1500968373218null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/473",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 472,
+    "globalId" : "SD472",
+    "name" : "Entry 1",
+    "created" : "2017-07-25T09:37:23.952Z",
+    "lastModified" : "2017-07-25T09:37:23.952Z",
+    "parentFolderId" : 471,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 3,
+      "globalId" : "FM3",
+      "name" : "Basic Document",
+      "stableId" : "1500968373218null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/472",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 469,
+    "globalId" : "SD469",
+    "name" : "Editable2",
+    "created" : "2017-07-25T09:37:23.936Z",
+    "lastModified" : "2017-07-25T09:37:23.936Z",
+    "parentFolderId" : 444,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 2,
+      "globalId" : "FM2",
+      "name" : "Selenium",
+      "stableId" : "1500968373215null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/469",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 466,
+    "globalId" : "SD466",
+    "name" : "2012-01-31",
+    "created" : "2017-07-25T09:37:23.836Z",
+    "lastModified" : "2017-07-25T09:37:23.836Z",
+    "parentFolderId" : 464,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 1,
+      "globalId" : "FM1",
+      "name" : "Experiment",
+      "stableId" : "1500968372940null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/466",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 465,
+    "globalId" : "SD465",
+    "name" : "2012-01-30",
+    "created" : "2017-07-25T09:37:23.828Z",
+    "lastModified" : "2017-07-25T09:37:23.828Z",
+    "parentFolderId" : 464,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 1,
+      "globalId" : "FM1",
+      "name" : "Experiment",
+      "stableId" : "1500968372940null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/465",
+      "rel" : "self"
+    } ]
+  }, {
+    "id" : 462,
+    "globalId" : "SD462",
+    "name" : "Experiment 1",
+    "created" : "2017-07-25T09:37:23.657Z",
+    "lastModified" : "2017-07-25T09:37:23.822Z",
+    "parentFolderId" : 444,
+    "signed" : false,
+    "tags" : null,
+    "form" : {
+      "id" : 1,
+      "globalId" : "FM1",
+      "name" : "Experiment",
+      "stableId" : "1500968372940null",
+      "version" : 0,
+      "_links" : [ ]
+    },
+    "owner" : {
+      "id" : -16,
+      "username" : "richard",
+      "email" : "richard@researchspace.com",
+      "firstName" : "Richard",
+      "lastName" : "Adams"
+    },
+    "_links" : [ {
+      "link" : "https://pangolin.researchspace.com:8086/api/v1/documents/462",
+      "rel" : "self"
+    } ]
+  } ],
+  "_links" : [ {
+    "link" : "https://pangolin.researchspace.com:8086/api/v1/documents?pageNumber=0",
+    "rel" : "self"
+  } ]
+}
