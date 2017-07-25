@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FieldPost {
 
-	private static final String FILE_REF_TEMPLATE = "<fileId=%d/>";
+	private static final String FILE_REF_TEMPLATE = "<fileId=%d>";
 
 	/**
 	 * Convenience method to return a FieldPost with empty content
