@@ -32,8 +32,8 @@ public class DocumentPost {
 	
 	/**
 	 * Appends a {@link FieldPost} to the list of Fields
-	 * @param toAdd
-	 * @return
+	 * @param toAdd a {@link FieldPost}
+	 * @return <code>true</code> if added, <code>false</code> otherwise
 	 */
 	public boolean addField(FieldPost toAdd) {
 		if(fields == null) {
