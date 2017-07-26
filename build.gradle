@@ -73,8 +73,6 @@ artifacts {
 uploadArchives {
   repositories {
 	mavenDeployer {
-		println project.hasProperty('ossrhUsername')
-		println project.property('ossrhUsername')
 	  beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
 	  repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
