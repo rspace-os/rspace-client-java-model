@@ -27,10 +27,10 @@ public class DocumentSearchResultTest extends AbstractModelTest {
 
 	@Test
 	public void test() throws JsonParseException, JsonMappingException, IOException {
-		DocumentSearchResult d = readFileToClass(DocumentSearchResultJson, DocumentSearchResult.class);
-		assertEquals(0,d.getPageNumber().intValue());
-		assertEquals(8,d.getTotalHits().intValue());
-		System.err.println(d);
+		DocumentSearchResult searchTerm = readFileToClass(DocumentSearchResultJson, DocumentSearchResult.class);
+		assertEquals(0,searchTerm.getPageNumber().intValue());
+		assertEquals(8,searchTerm.getTotalHits().intValue());
+		System.err.println(searchTerm);
 	}
 
 }

@@ -1,0 +1,3 @@
+{ "operator": "or", 
+  "terms": [ {"query": "FM12345", "queryType": "form"}, 
+             {"query": "PCR", "queryType": "tag" }] }
