@@ -4,6 +4,7 @@
 *.classpath
 .gradle/*
 .settings/*
+.svn/*
 
 # Log file
 *.log
