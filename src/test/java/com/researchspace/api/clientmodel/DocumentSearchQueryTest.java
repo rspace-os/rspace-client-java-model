@@ -12,8 +12,6 @@ import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.management.OperatingSystemMXBean;
 
 public class DocumentSearchQueryTest extends AbstractModelTest {
 	
