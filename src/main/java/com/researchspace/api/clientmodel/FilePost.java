@@ -12,7 +12,7 @@ public class FilePost {
 
 	@NonNull
 	private File file;
-	private Integer folderId;
+	private Long folderId;
 	private String caption;
 	
 }

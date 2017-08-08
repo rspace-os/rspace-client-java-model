@@ -24,6 +24,6 @@ public class FieldPut extends FieldPost {
 	 * Cannot be null
 	 */
 	@NonNull
-	private Integer id;	
+	private Long id;
 
 }
