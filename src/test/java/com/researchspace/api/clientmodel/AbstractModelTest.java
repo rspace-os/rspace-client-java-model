@@ -15,6 +15,7 @@ public abstract class AbstractModelTest {
 		ObjectMapper reader = new ObjectMapper();
 		reader.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
 		reader.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
+		reader.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 		// Uses Enum.toString() for deserialization of an Enum
 		T d = reader.readValue(jsonFile, clazz);
 		return d;

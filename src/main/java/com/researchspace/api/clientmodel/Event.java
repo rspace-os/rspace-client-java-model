@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * @since 1.2
  */
 @Data
-@EqualsAndHashCode(of={"timestamp", "username", "domain","actions"})
+@EqualsAndHashCode(of={"timestamp", "username", "domain","action"})
 
 public class Event {
 
@@ -19,6 +19,6 @@ public class Event {
 	private String username;
 	private String fullName;
 	private EventDomain domain;
-	private EventAction actions;
+	private EventAction action;
 	private Map<String, Object> payload;
 }
