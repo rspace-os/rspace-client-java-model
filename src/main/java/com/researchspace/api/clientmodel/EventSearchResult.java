@@ -37,8 +37,8 @@ import lombok.Value;
 @Value
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class DocumentSearchResult extends PaginatedResultList {
+public class EventSearchResult extends PaginatedResultList {
 
-    private List<DocumentInfo> documents = new ArrayList<>();
+    private List<Event> events = new ArrayList<>();
 
 }
