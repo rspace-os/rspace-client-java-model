@@ -9,13 +9,13 @@ import lombok.ToString;
 import lombok.Value;
 
 /**
- * DocumentSearchResults
+ * ActivitySearchResults
  */
 @Value
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class EventSearchResult extends PaginatedResultList {
+public class ActivitySearchResult extends PaginatedResultList {
 
-    private List<Event> events = new ArrayList<>();
+    private List<Activity> activities = new ArrayList<>();
 
 }

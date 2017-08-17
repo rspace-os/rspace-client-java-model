@@ -1,5 +1,5 @@
 package com.researchspace.api.clientmodel;
 
-public enum EventDomain {
+public enum ActivityDomain {
 RECORD,NOTEBOOK,FOLDER,WORKSPACE
 }

@@ -27,12 +27,12 @@ import lombok.Singular;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventSearchQuery {
+public class ActivitySearchQuery {
 	@Singular
-	private List<EventDomain> domains;
+	private List<ActivityDomain> domains;
 	
 	@Singular
-	private List<EventAction> actions;
+	private List<ActivityAction> actions;
 	
 	@Singular
 	private List<String> usernames;

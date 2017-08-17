@@ -12,13 +12,12 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(of={"timestamp", "username", "domain","action"})
-
-public class Event {
+public class Activity {
 
 	private Date timestamp;
 	private String username;
 	private String fullName;
-	private EventDomain domain;
-	private EventAction action;
+	private ActivityDomain domain;
+	private ActivityAction action;
 	private Map<String, Object> payload;
 }

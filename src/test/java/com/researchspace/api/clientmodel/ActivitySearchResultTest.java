@@ -14,9 +14,9 @@ import org.junit.Test;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-public class EventSearchResultTest extends AbstractModelTest {
+public class ActivitySearchResultTest extends AbstractModelTest {
 	
-	File EventSearchResultJson = new File("src/test/resources/EventSearchResult.json");
+	File ActivitySearchResultJson = new File("src/test/resources/ActivitySearchResult.json");
 
 	@Before
 	public void setUp() throws Exception {
@@ -28,12 +28,11 @@ public class EventSearchResultTest extends AbstractModelTest {
 
 	@Test
 	public void test() throws JsonParseException, JsonMappingException, IOException {
-		EventSearchResult searchRes = readFileToClass(EventSearchResultJson, EventSearchResult.class);
+		ActivitySearchResult searchRes = readFileToClass(ActivitySearchResultJson, ActivitySearchResult.class);
 		assertEquals(0,searchRes.getPageNumber().intValue());
 		assertEquals(1,searchRes.getTotalHits().intValue());
-		assertNotNull(searchRes.getEvents().get(0).getTimestamp());	
-		Map<String,Object> payload = searchRes.getEvents().get(0).getPayload();
+		assertNotNull(searchRes.getActivities().get(0).getTimestamp());	
+		Map<String,Object> payload = searchRes.getActivities().get(0).getPayload();
 		assertNotNull(payload.get("data"));
 	}
-
 }
