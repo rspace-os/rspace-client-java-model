@@ -1,0 +1,29 @@
+{
+  "totalHits": 1,
+  "pageNumber": 0,
+  "activities": [
+    {
+      "username": "bob1234",
+      "fullName": "Bob Smith",
+      "action": "WRITE",
+      "domain": "RECORD",
+      "timestamp": "2017-08-09T08:55:01.627Z",
+      "payload": {
+        "data": {
+          "name": "MyDocument",
+          "id": "SD483",
+          "type": "NORMAL",
+          "userVersion": {
+            "version": 2
+          }
+        }
+      }
+    }
+  ],
+  "_links": [
+    {
+      "link": "https://myrspace.com/api/v1/events?oid=SD483",
+      "type": "self"
+    }
+  ]
+}

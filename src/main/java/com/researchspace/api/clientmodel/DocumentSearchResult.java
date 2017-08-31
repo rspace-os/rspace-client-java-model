@@ -24,6 +24,7 @@
 
 package com.researchspace.api.clientmodel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.EqualsAndHashCode;
@@ -38,6 +39,6 @@ import lombok.Value;
 @ToString(callSuper=true)
 public class DocumentSearchResult extends PaginatedResultList {
 
-    private List<DocumentInfo> documents = null;
+    private List<DocumentInfo> documents = new ArrayList<>();
 
 }
