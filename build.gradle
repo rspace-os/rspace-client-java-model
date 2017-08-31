@@ -5,7 +5,7 @@ apply plugin: 'eclipse'
 apply plugin: 'signing'
 group = 'com.researchspace'
 sourceCompatibility = 1.8
-version = '1.2.0-SNAPSHOT'
+version = '1.2.0'
 // 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
@@ -60,9 +60,9 @@ task sourcesJar(type: Jar) {
 
 
 //Only sign if it's a release version, uncomment to activate this
-//signing {
-//    sign configurations.archives
-//}
+signing {
+    sign configurations.archives
+}
 
 
 artifacts {
