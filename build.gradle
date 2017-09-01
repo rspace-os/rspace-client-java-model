@@ -60,9 +60,9 @@ task sourcesJar(type: Jar) {
 
 
 //Only sign if it's a release version, uncomment to activate this
-signing {
-    sign configurations.archives
-}
+//signing {
+//    sign configurations.archives
+//}
 
 
 artifacts {
