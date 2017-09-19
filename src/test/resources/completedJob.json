@@ -1,0 +1,14 @@
+{
+  "id": 23,
+  "status": "RUNNING",
+  "result": {
+    "checksum": "abcde12345",
+    "algorithm": "CRC32",
+    "size": 1024,
+    "expiryDate": "2017-11-25T00:00:00.000Z"
+  },
+  "_links": [{
+    "rel": "self",
+    "link": "https://myrspace.com/api/v1/jobs/23"
+  }]
+}
