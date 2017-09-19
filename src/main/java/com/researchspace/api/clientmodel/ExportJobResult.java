@@ -13,7 +13,6 @@ import lombok.Setter;
  *
  */
 @Data
-@Setter(value=AccessLevel.PACKAGE)
 public class ExportJobResult implements Result {
 	
 	private String checksum;

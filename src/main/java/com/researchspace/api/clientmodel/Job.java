@@ -11,7 +11,6 @@ import lombok.Setter;
  */
 @Data
 @EqualsAndHashCode(callSuper=true)
-@Setter(value=AccessLevel.PACKAGE)
 public abstract class Job  extends Linkable {
 	
 	private Long id;
