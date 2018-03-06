@@ -26,7 +26,8 @@ public class FolderPostTest extends AbstractModelTest {
 
 	@Test
 	public void folderPost() {
-		assertEquals("Test folder", FolderPost.builder().name("Test folder").build().getName());
+		assertEquals("Test folder", FolderPost.builder()
+				.name("Test folder").notebook(true).build().getName());
 	}
 	
 	@Test

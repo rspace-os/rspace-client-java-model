@@ -8,5 +8,6 @@ import lombok.Data;
 public class FolderPost {
 	
 	private String name;
+	private Boolean notebook;
 
 }
