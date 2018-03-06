@@ -1,6 +1,6 @@
 {
   "id": 23,
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "result": {
     "checksum": "abcde12345",
     "algorithm": "CRC32",
@@ -8,7 +8,7 @@
     "expiryDate": "2017-11-25T00:00:00.000Z"
   },
   "_links": [{
-    "rel": "self",
-    "link": "https://myrspace.com/api/v1/jobs/23"
+    "rel": "enclosure",
+    "link": "https://myrspace.com/api/v1/export/export123.zip"
   }]
 }
