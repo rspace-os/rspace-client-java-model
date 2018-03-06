@@ -1,0 +1,13 @@
+{
+  "id" : 295,
+  "globalId" : "NB295",
+  "name" : "n1",
+  "created" : "2018-03-06T17:02:01.350Z",
+  "lastModified" : "2018-03-06T17:02:01.350Z",
+  "parentFolderId" : 271,
+  "_links" : [ {
+    "link" : "https://pangolin.researchspace.com:8089/api/v1/folders/295",
+    "rel" : "self"
+  } ],
+  "notebook" : true
+}
