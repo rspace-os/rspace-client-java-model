@@ -28,6 +28,12 @@ public class DocumentPost {
 	@Singular
 	private List<FieldPost> fields;
 	
+	/**
+	 * Optional id of the folder to hold this document.
+	 * @since 1.3.0
+	 */
+	private Long parentFolderId;
+	
 	private FormRef form;
 	
 	/**
