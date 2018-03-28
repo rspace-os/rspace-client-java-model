@@ -41,17 +41,11 @@ import lombok.ToString;
 public class DocumentInfo extends IdentifiableNameable {
 
     private Date created = null;  
-
     private Date lastModified = null;
-
     private Boolean signed = null;
-
     private String tags = null;
-
-    private Form form = null;
-
+    private FormInfo form = null;
     private User owner = null;
-    
     private Long parentFolderId = null;
 
 }

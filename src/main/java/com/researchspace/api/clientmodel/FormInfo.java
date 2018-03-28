@@ -34,7 +34,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor
-public class Form extends  IdentifiableNameable {
+public class FormInfo extends  IdentifiableNameable {
 
     private String stableId = null;
     private Integer version = null;

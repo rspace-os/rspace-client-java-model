@@ -5,25 +5,26 @@ apply plugin: 'eclipse'
 apply plugin: 'signing'
 group = 'com.researchspace'
 sourceCompatibility = 1.8
-version = '1.3.0-SNAPSHOT'
+version = '1.4.0-SNAPSHOT'
 // 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 def jacksonVersion='2.6.7'
+def log4jVersion='1.7.21'
 
 repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	  
 	compile 'org.projectlombok:lombok:1.16.16'
 	compile 'commons-lang:commons-lang:2.6'
-	compile 'org.slf4j:slf4j-api:1.7.21'
+	compile 'org.slf4j:slf4j-api:'+log4jVersion
+	compile 'javax.validation:validation-api:1.1.0.Final'
  
 	testCompile   'junit:junit:4.12'
-	testCompile   'org.slf4j:slf4j-simple:1.7.21'
+	testCompile   'org.slf4j:slf4j-simple:'+log4jVersion
 	testCompile 'com.fasterxml.jackson.core:jackson-annotations:'+jacksonVersion
 	testCompile 'com.fasterxml.jackson.core:jackson-core:'+jacksonVersion
 	testCompile 'com.fasterxml.jackson.core:jackson-databind:'+jacksonVersion
