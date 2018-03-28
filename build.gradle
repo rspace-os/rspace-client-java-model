@@ -22,12 +22,13 @@ dependencies {
 	compile 'commons-lang:commons-lang:2.6'
 	compile 'org.slf4j:slf4j-api:'+log4jVersion
 	compile 'javax.validation:validation-api:1.1.0.Final'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:'+jacksonVersion
+	compile 'com.fasterxml.jackson.core:jackson-core:'+jacksonVersion
+	compile 'com.fasterxml.jackson.core:jackson-databind:'+jacksonVersion
  
 	testCompile   'junit:junit:4.12'
 	testCompile   'org.slf4j:slf4j-simple:'+log4jVersion
-	testCompile 'com.fasterxml.jackson.core:jackson-annotations:'+jacksonVersion
-	testCompile 'com.fasterxml.jackson.core:jackson-core:'+jacksonVersion
-	testCompile 'com.fasterxml.jackson.core:jackson-databind:'+jacksonVersion
+
 }
 
 test{
