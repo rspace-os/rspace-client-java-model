@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-@JsonPropertyOrder(value={"id", "sharedItemId", "sharedTargetType", "permission", })
+@JsonPropertyOrder(value={"id", "sharedItemId","sharedItemName", "sharedTargetType", "permission", })
 public class ApiShareInfo  {
 	
-	private Long id, sharedItemId;
+	private Long id, sharedItemId,sharedItemName;
 	private String sharedTargetType, permission;
 
 
