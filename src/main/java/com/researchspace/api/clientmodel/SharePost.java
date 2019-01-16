@@ -6,6 +6,8 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,8 +26,10 @@ public class SharePost {
   
   @Valid
   @Singular
+  @JsonProperty("groups")
   private List<GroupSharePostItem> groupSharePostItems = new ArrayList<>();
   @Valid
   @Singular
+  @JsonProperty("users")
   private List<UserSharePostItem> userSharePostItems = new ArrayList<>();
 }
