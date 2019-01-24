@@ -14,6 +14,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.researchspace.api.jackson.ISO8601DateSerialiser;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -153,7 +154,6 @@ public class FormPost {
 			this.defaultValue = defaultValue ==null?null:new Date(defaultValue.getTime());
 		}
 
-		private static final String YYYY_MM_DD_ISO8601 = "yyyy-MM-dd";
 
 		@JsonSerialize(using = ISO8601DateSerialiser.class)
 		private Date defaultValue;

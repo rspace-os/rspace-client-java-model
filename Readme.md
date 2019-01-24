@@ -21,12 +21,12 @@ Binaries are  available in Maven Central as
     <dependency>
       <groupId>com.researchspace</groupId>
       <artifactId>rspace-client-java-model</artifactId>
-      <version>1.1.1</version>
+      <version>1.5.0</version>
     </dependency>
     
  or as Gradle:
  
-    compile 'com.researchspace:rspace-client-java-model:1.1.1'
+    compile 'com.researchspace:rspace-client-java-model:1.5.0'
     
  To build from source:
  
@@ -47,10 +47,12 @@ Binaries are  available in Maven Central as
   manipulation. If you want to see these methods in your IDE, please consult the
    [Lombok website](https://projectlombok.org/) for how to do this.
    
-  There are no dependencies on JSON libraries leaving you free to choose your own to convert these
+  There are minimal dependencies on Jackson libraries,  leaving you free to choose your own JSON converter   to convert these
   objects to/from JSON. JSON serialisation has been tested using Jackson 2.8. If you do use Jackson,
   please configure your ObjectMapper to convert Enum classes as follows:
   
       ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
 		mapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
+ 
+ 

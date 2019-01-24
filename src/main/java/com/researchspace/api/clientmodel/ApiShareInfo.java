@@ -1,6 +1,6 @@
 package com.researchspace.api.clientmodel;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-@JsonPropertyOrder(value={"id", "sharedItemId","sharedItemName", "sharedTargetType", "permission", })
 public class ApiShareInfo  {
 	
 	private Long id, sharedItemId,sharedItemName;

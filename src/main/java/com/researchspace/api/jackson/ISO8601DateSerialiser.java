@@ -1,4 +1,4 @@
-package com.researchspace.api.clientmodel;
+package com.researchspace.api.jackson;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
