@@ -9,7 +9,7 @@ version = '1.5.0'
 // 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
-def jacksonVersion='2.6.7'
+def jacksonVersion='2.8.11'
 def log4jVersion='1.7.21'
 
 repositories {
@@ -17,10 +17,11 @@ repositories {
 }
 
 dependencies {
-	  
-	compile 'org.projectlombok:lombok:1.16.16'
+	 annotationProcessor 'org.projectlombok:lombok:1.18.4'  
+	compile 'org.projectlombok:lombok:1.18.4'
 	compile 'commons-lang:commons-lang:2.6'
 	compile 'org.slf4j:slf4j-api:'+log4jVersion
+	
 	compile 'javax.validation:validation-api:1.1.0.Final'
 	compile 'com.fasterxml.jackson.core:jackson-annotations:'+jacksonVersion
 	compile 'com.fasterxml.jackson.core:jackson-core:'+jacksonVersion
@@ -43,10 +44,6 @@ tasks.withType(Test) {
 	reports.html.destination = file("${reporting.baseDir}/${name}")
 }
 
-//Lists dependencies
-task listJars << {
-	configurations.compile.each { File file -> println file.name }
-}
 
 // Below here are tasks required for signing and uploading to Maven Central
 task javadocJar(type: Jar) {
@@ -62,9 +59,9 @@ task sourcesJar(type: Jar) {
 
 
 //Only sign if it's a release version, uncomment to activate this
-signing {
-    sign configurations.archives
-}
+//signing {
+//    sign configurations.archives
+//}
 
 
 artifacts {
