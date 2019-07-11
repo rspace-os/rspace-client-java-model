@@ -42,5 +42,6 @@ public class ApiFile extends IdentifiableNameable {
     private Long size = null;
     private String caption;
     private Date created;
+    private Integer version = null;
     
 }
