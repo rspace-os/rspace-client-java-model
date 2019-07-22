@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 /**
  * For creating new users. 
- * <br/>
+ * <br>
  * username, email, password, firstNname and lastName are mandatory.
  * @author rspace
  *

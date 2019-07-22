@@ -10,8 +10,8 @@ import lombok.Singular;
 
 /**
  * Data structure for posting to create a new group.
- * <br/>
- * There must be >=1 PI user in the list of UserGroupPost objects
+ * <br>
+ * There must be &gt;= 1 PI user in the list of UserGroupPost objects
  * @author rspace
  * @since 1.5.4
  *

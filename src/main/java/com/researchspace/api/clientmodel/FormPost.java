@@ -40,7 +40,7 @@ public class FormPost {
 		private List<FormFieldPost> fields ;
 		/**
 		 * 
-		 * @param fieldToAdd
+		 * @param fieldToAdd the FormFieldPost
 		 * @return <code>this</code> for method chaining
 		 * @since 1.40
 		 */
