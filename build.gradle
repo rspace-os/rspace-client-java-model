@@ -5,11 +5,11 @@ apply plugin: 'eclipse'
 apply plugin: 'signing'
 group = 'com.researchspace'
 sourceCompatibility = 1.8
-version = '1.53.0'
+version = '1.54.0-SNAPSHOT'
 // 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
-def jacksonVersion='2.8.11'
+def jacksonVersion='2.9.9'
 def log4jVersion='1.7.21'
 
 repositories {
