@@ -8,7 +8,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
+/**
+ * Defines the role in a group for a group member
+ * @author rspace
+ *
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

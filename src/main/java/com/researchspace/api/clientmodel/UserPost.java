@@ -1,17 +1,18 @@
 package com.researchspace.api.clientmodel;
 
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
-
-
-
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+/**
+ * For creating new users. 
+ * <br/>
+ * username, email, password, firstNname and lastName are mandatory.
+ * @author rspace
+ *
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,7 +37,7 @@ public  class UserPost {
 	@Size(min = 16, max = 32)
 	private String apiKey;
 	/**
-	 * Whether or not to create a group for a PI user.
+	 * Whether or not to create a group up-front for a PI user.
 	 */
 	@Builder.Default
 	private boolean createGroupForPi = false;
