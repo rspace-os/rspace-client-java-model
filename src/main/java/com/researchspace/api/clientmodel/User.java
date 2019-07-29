@@ -40,5 +40,6 @@ public class User {
     private String email = null;
     private String firstName = null;
     private String lastName = null;
+    private Long homeFolderId = null;
 
 }

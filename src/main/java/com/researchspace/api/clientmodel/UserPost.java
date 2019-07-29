@@ -36,11 +36,7 @@ public  class UserPost {
 	
 	@Size(min = 16, max = 32)
 	private String apiKey;
-	/**
-	 * Whether or not to create a group up-front for a PI user.
-	 */
-	@Builder.Default
-	private boolean createGroupForPi = false;
+	
 	
 }
 
