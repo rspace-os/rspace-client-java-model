@@ -16,6 +16,7 @@ public class GroupPostTest {
 		
 		GroupPost grpPost = GroupPost.builder().displayName("groupName")
 		   .user(UserGroupPost.builder().username("pi").roleInGroup(RoleInGroup.PI).build())
+		   .user(UserGroupPost.builder().username("pi").roleInGroup(RoleInGroup.RS_LAB_ADMIN).build())
 		   .build();
 		
 	}
