@@ -1,6 +1,7 @@
 package com.researchspace.api.clientmodel;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import com.researchspace.api.clientmodel.UserGroupPost.RoleInGroup;
 

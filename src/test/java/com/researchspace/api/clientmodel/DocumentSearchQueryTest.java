@@ -1,14 +1,14 @@
 package com.researchspace.api.clientmodel;
 
 import static com.researchspace.api.clientmodel.SearchTerm.createTerm;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -17,11 +17,11 @@ public class DocumentSearchQueryTest extends AbstractModelTest {
 	
 	File DocumentSearchQueryJson = new File("src/test/resources/DocumentSearchQuery.json");
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 	}
 

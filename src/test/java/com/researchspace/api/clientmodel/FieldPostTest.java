@@ -1,20 +1,20 @@
 package com.researchspace.api.clientmodel;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class FieldPostTest {
 	FieldPost fieldPost;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		fieldPost = new FieldPost("some content");
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 	}
 

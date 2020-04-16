@@ -21,7 +21,7 @@ public class UserGroupPost {
 	
 	public static enum RoleInGroup {
 		DEFAULT,
-		LAB_ADMIN,
+		RS_LAB_ADMIN,
 		PI
 	}
 	
