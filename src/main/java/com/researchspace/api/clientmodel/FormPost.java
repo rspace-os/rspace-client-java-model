@@ -22,7 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Singular;
 /**
- * For constructing request bodies to create new forms.
+ * For constructing request bodies to create new forms, or editing existing forms.
  * @author rspace
  *
  */
@@ -33,7 +33,8 @@ public class FormPost {
 	public static class  Form {
 		@NotNull
 	    @Size(min=1)
-		private String name;	
+		private String name;
+		
 		private String tags;
 		@Valid
 		@Singular
@@ -58,6 +59,13 @@ public class FormPost {
 				+ " was '${validatedValue}' but must match {regexp} ")
 		@NotNull
 		private String type;
+		
+		/**
+		 * Must be set for PUT requests where this field is being edited
+		 * <br/>
+		 * Can be <code>null</code> for POSTs or for adding new fields to existing forms.
+		 */
+		private Long id;
 
 		FormFieldPost(String type) {
 			super();
@@ -77,6 +85,11 @@ public class FormPost {
 			}
 			String options = StringUtils.join(optionParts, "&");
 			return options;
+		}
+
+		public FormFieldPost(String type, String name) {
+			this.type = type;
+			this.name = name;
 		}
 	}
 	
