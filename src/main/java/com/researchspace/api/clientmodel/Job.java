@@ -1,9 +1,7 @@
 package com.researchspace.api.clientmodel;
 
-import lombok.AccessLevel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Setter;
 /**
  * 
  * @author rspace
@@ -15,6 +13,10 @@ public abstract class Job  extends Linkable {
 	
 	private Long id;
 	private String status;
+	/**
+	 * requires 1.69.19
+	 */
+	private float percentComplete;
 	
 	/**
 	 * Job completed successfully
