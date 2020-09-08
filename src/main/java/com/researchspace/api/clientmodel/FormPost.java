@@ -22,7 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Singular;
 /**
- * For constructing request bodies to create new forms.
+ * For constructing request bodies to create new forms or edit existing ones.
  * @author rspace
  *
  */
@@ -31,6 +31,10 @@ public class FormPost {
 	@Data
 	@Builder
 	public static class  Form {
+		/**
+		 * Optional, must be set for PUT requests
+		 */
+		private Long id;
 		@NotNull
 	    @Size(min=1)
 		private String name;	
@@ -63,6 +67,8 @@ public class FormPost {
 			super();
 			this.type = type;
 		}
+		
+		private Long id;
 
 		@NotNull
 	    @Size(min=1)
@@ -77,6 +83,11 @@ public class FormPost {
 			}
 			String options = StringUtils.join(optionParts, "&");
 			return options;
+		}
+
+		public FormFieldPost( String type, String name) {
+			this.name = name;
+			this.type = type;
 		}
 	}
 	
@@ -95,7 +106,6 @@ public class FormPost {
 		private boolean multipleChoice;
 
 		@Size(min = 1, message = "Please provide at least one option")
-		
 		private List<String> options = new ArrayList<>();
 		
 		private List<String> defaultOptions = new ArrayList<>();		
