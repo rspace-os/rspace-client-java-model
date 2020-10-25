@@ -5,7 +5,7 @@
 
 	<groupId>com.researchspace</groupId>
 	<artifactId>rspace-client-java-model</artifactId>
-	<version>1.70.0-SNAPSHOT</version>
+	<version>1.71.0-SNAPSHOT</version>
 	<name>rspace-client-java-model</name>
 
 	<properties>
