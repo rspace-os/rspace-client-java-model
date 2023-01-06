@@ -39,6 +39,6 @@ import lombok.Value;
 @ToString(callSuper=true)
 public class DocumentSearchResult extends PaginatedResultList {
 
-    private List<DocumentInfo> documents = new ArrayList<>();
+    List<DocumentInfo> documents = new ArrayList<>();
 
 }

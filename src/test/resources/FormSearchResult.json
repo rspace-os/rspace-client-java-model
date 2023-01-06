@@ -1,0 +1,117 @@
+{
+  "totalHits": 5,
+  "pageNumber": 0,
+  "forms": [
+    {
+      "id": 32785,
+      "globalId": "FM32785",
+      "stableId": "1672919971049null",
+      "version": 0,
+      "name": "formName",
+      "tags": "a,b,c",
+      "formState": "PUBLISHED",
+      "accessControl": {
+        "ownerPermissionType": "WRITE",
+        "groupPermissionType": "NONE",
+        "worldPermissionType": "NONE"
+      },
+      "iconId": -1,
+      "_links": [
+        {
+          "link": "http://localhost:8080/api/v1/forms/32785",
+          "rel": "self"
+        }
+      ]
+    },
+    {
+      "id": 32777,
+      "globalId": "FM32777",
+      "stableId": "1672919817368null",
+      "version": 0,
+      "name": "formName",
+      "tags": "a,b,c",
+      "formState": "PUBLISHED",
+      "accessControl": {
+        "ownerPermissionType": "WRITE",
+        "groupPermissionType": "NONE",
+        "worldPermissionType": "NONE"
+      },
+      "iconId": -1,
+      "_links": [
+        {
+          "link": "http://localhost:8080/api/v1/forms/32777",
+          "rel": "self"
+        }
+      ]
+    },
+    {
+      "id": 32769,
+      "globalId": "FM32769",
+      "stableId": "1672918340308null",
+      "version": 0,
+      "name": "formName",
+      "tags": "a,b,c",
+      "formState": "PUBLISHED",
+      "accessControl": {
+        "ownerPermissionType": "WRITE",
+        "groupPermissionType": "NONE",
+        "worldPermissionType": "NONE"
+      },
+      "iconId": -1,
+      "_links": [
+        {
+          "link": "http://localhost:8080/api/v1/forms/32769",
+          "rel": "self"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "globalId": "FM5",
+      "stableId": "1672840469035null",
+      "version": 0,
+      "name": "RSpace Tags from Ontologies",
+      "tags": null,
+      "formState": "PUBLISHED",
+      "accessControl": {
+        "ownerPermissionType": "WRITE",
+        "groupPermissionType": "NONE",
+        "worldPermissionType": "READ"
+      },
+      "iconId": 4,
+      "_links": [
+        {
+          "link": "http://localhost:8080/api/v1/forms/5",
+          "rel": "self"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "globalId": "FM4",
+      "stableId": "1672840468968null",
+      "version": 0,
+      "name": "RSpace_Equipment_Form",
+      "tags": null,
+      "formState": "PUBLISHED",
+      "accessControl": {
+        "ownerPermissionType": "WRITE",
+        "groupPermissionType": "NONE",
+        "worldPermissionType": "READ"
+      },
+      "iconId": -1,
+      "_links": [
+        {
+          "link": "http://localhost:8080/api/v1/forms/4",
+          "rel": "self"
+        }
+      ]
+    }
+  ],
+  "_links": [
+    {
+      "link": "http://localhost:8080/api/v1/forms?pageNumber=0&scope=mine",
+      "rel": "self"
+    }
+  ]
+}
