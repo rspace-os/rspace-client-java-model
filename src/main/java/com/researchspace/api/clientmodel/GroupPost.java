@@ -26,4 +26,6 @@ public  class GroupPost {
 
 	@Singular
 	private List<UserGroupPost> users;
+
+	private GroupType type = GroupType.LAB_GROUP;
 }

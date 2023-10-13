@@ -15,11 +15,9 @@ public class GroupPostTest {
 				.role(UserRole.ROLE_PI).build();
 		// create user, then can create group.
 		
-		GroupPost grpPost = GroupPost.builder().displayName("groupName")
+		GroupPost grpPost = GroupPost.builder().displayName("groupName").type(GroupType.LAB_GROUP)
 		   .user(UserGroupPost.builder().username("pi").roleInGroup(RoleInGroup.PI).build())
 		   .user(UserGroupPost.builder().username("pi").roleInGroup(RoleInGroup.RS_LAB_ADMIN).build())
 		   .build();
-		
 	}
-
 }

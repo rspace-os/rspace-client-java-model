@@ -22,7 +22,8 @@ public class UserGroupPost {
 	public static enum RoleInGroup {
 		DEFAULT,
 		RS_LAB_ADMIN,
-		PI
+		PI,
+		GROUP_OWNER
 	}
 	
 	private String username;
