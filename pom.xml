@@ -20,14 +20,8 @@
 	</repositories>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-		</plugins>
+		<!-- maven compiler/surefire plugins defined in parent pom file --> 
 	</build>
-	
 
 	<dependencies>
 		<dependency>
