@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.97.0]
+
+- Support newly added audit (activity) actions: DUPLICATE and RENAME
+- Update list of possible audit (activity) domains
+
 ## [1.95.0]
 - Compile with java 17
 - Switch to using parent pom from rspace-os-parent project
