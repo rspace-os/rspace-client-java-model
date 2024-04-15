@@ -14,6 +14,7 @@ import com.researchspace.api.clientmodel.FormPost.ChoiceFieldPost;
 import com.researchspace.api.clientmodel.FormPost.DateFieldPost;
 import com.researchspace.api.clientmodel.FormPost.NumberFieldPost;
 import com.researchspace.api.clientmodel.FormPost.RadioFieldPost;
+import com.researchspace.api.clientmodel.FormPost.TimeFieldPost;
 import com.researchspace.api.clientmodel.FormPost.StringFieldPost;
 import com.researchspace.api.clientmodel.FormPost.TextFieldPost;
 
@@ -39,11 +40,10 @@ public class FormPostTest {
 		.field(StringFieldPost.builder().name("name").defaultValue("defaut string").build())
 		.field(TextFieldPost.builder().name("text-name").defaultValue("<em>html</em").build())
 		.field(ChoiceFieldPost.builder().name("choices").multipleChoice(true).options(choices).defaultOptions(defaultChoices).build())
+		.field(TimeFieldPost.builder().name("MyTime").defaultValue(9900000L).build())
 		.field(RadioFieldPost.builder().name("radios").options(radios).defaultOption(defaultRadio).build())
 		.build();
 		ObjectMapper reader = new ObjectMapper();
 		System.err.println(reader.writeValueAsString(toSubmit));
-	
 	}
-
 }

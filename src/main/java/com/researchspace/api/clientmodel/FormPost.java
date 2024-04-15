@@ -58,7 +58,7 @@ public class FormPost {
 	@EqualsAndHashCode(callSuper=false)
 	@AllArgsConstructor
 	public static abstract class FormFieldPost {
-		@Pattern(regexp="(Text)|(String)|(Number)|(Radio)|(Choice)|(Date)", message="Please supply a supported 'type' property: "
+		@Pattern(regexp="(Text)|(String)|(Number)|(Radio)|(Choice)|(Date)|(Time)", message="Please supply a supported 'type' property: "
 				+ " was '${validatedValue}' but must match {regexp} ")
 		@NotNull
 		private String type;
@@ -192,5 +192,16 @@ public class FormPost {
 		private Byte decimalPlaces;
 		// there is now no default default value, see RSPAC-65
 		private Double defaultValue = null;				
+	}
+
+	@Data
+	@EqualsAndHashCode(callSuper = false)
+	public static class  TimeFieldPost extends FormFieldPost{
+		private Long defaultValue;
+		@Builder
+		private TimeFieldPost(String name, Long defaultValue) {
+			super("Time", name);
+			this.defaultValue = defaultValue;
+		}
 	}
 }
