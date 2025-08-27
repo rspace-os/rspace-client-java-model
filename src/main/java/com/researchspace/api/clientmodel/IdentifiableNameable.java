@@ -14,11 +14,4 @@ public abstract class IdentifiableNameable extends Linkable {
     private Long id;
     private String globalId;
     private String name;
-    private String description;
-
-    @Builder.Default
-    private InventorySharingMode sharingMode = InventorySharingMode.OWNER_GROUPS;
-    public enum InventorySharingMode { OWNER_GROUPS, WHITELIST, OWNER_ONLY }
-
-    private List<SharedWith> sharedWith;
 }
