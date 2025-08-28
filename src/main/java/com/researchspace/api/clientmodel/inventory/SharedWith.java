@@ -1,5 +1,6 @@
-package com.researchspace.api.clientmodel;
+package com.researchspace.api.clientmodel.inventory;
 
+import com.researchspace.api.clientmodel.GroupInfo;
 import lombok.Data;
 
 @Data

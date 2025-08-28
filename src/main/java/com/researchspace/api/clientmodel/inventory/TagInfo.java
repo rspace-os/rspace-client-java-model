@@ -1,4 +1,4 @@
-package com.researchspace.api.clientmodel;
+package com.researchspace.api.clientmodel.inventory;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

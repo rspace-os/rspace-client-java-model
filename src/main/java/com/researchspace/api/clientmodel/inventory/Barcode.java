@@ -1,4 +1,4 @@
-package com.researchspace.api.clientmodel;
+package com.researchspace.api.clientmodel.inventory;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

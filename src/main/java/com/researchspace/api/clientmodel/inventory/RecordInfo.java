@@ -1,6 +1,7 @@
-package com.researchspace.api.clientmodel;
+package com.researchspace.api.clientmodel.inventory;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.researchspace.api.clientmodel.IdentifiableNameable;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public abstract class InventoryRecordInfo extends IdentifiableNameable {
+public abstract class RecordInfo extends IdentifiableNameable {
 
     private String description;
 
@@ -20,16 +21,15 @@ public abstract class InventoryRecordInfo extends IdentifiableNameable {
     private List<TagInfo> tags = new ArrayList<>();
 
     @Builder.Default
-    private InventorySharingMode sharingMode = InventorySharingMode.OWNER_GROUPS;
+    private SharingMode sharingMode = SharingMode.OWNER_GROUPS;
 
-    public enum InventorySharingMode {OWNER_GROUPS, WHITELIST, OWNER_ONLY}
+    public enum SharingMode {OWNER_GROUPS, WHITELIST, OWNER_ONLY}
 
     private List<SharedWith> sharedWith;
 
-    @JsonProperty(value = "type")
-    private InventoryType type;
+    private Type type;
 
-    public enum InventoryType {
+    public enum Type {
         SAMPLE,
         SUBSAMPLE,
         CONTAINER,
