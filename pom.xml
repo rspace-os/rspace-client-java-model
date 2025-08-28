@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>rspace-client-java-model</artifactId>
-	<version>1.97.1</version>
+	<version>1.98.0</version>
 	<name>rspace-client-java-model</name>
 	<parent>
 		<groupId>com.github.rspace-os</groupId>
