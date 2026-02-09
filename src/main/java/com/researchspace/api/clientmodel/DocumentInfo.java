@@ -44,8 +44,11 @@ public class DocumentInfo extends IdentifiableNameable {
     private Date lastModified = null;
     private Boolean signed = null;
     private String tags = null;
+    private String tagMetaData = null;
     private FormInfo form = null;
     private User owner = null;
     private Long parentFolderId = null;
+    private Long grandParentId = null;
+    private Long version;
 
 }
