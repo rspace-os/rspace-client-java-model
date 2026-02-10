@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.98.1]
+
+### Added
+- Introduced support for document:
+  - `MoveRequest` model
+
+### Changed
+- Upgrade dependency: lombok 1.18.42.
+
 ## [1.98.0]
 
 ### Added
