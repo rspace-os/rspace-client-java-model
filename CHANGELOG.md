@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.99.0]
+- switch from rspace-os-parent to rspace-parent as parent pom
+
 ## [1.98.1]
 
 ### Added
