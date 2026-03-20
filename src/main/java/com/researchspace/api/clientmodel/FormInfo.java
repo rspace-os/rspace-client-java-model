@@ -24,9 +24,12 @@
 
 package com.researchspace.api.clientmodel;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * The Form on which the document structure is based.
@@ -34,9 +37,19 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor
-public class FormInfo extends  IdentifiableNameable {
+@AllArgsConstructor
+@SuperBuilder
+@JsonPropertyOrder(value = {
+    "id", "globalId", "stableId", "version", "name", "tags", 
+    "formState", "accessControl", "iconId", "_links"
+})
+public class FormInfo extends IdentifiableNameable {
 
-    private String stableId = null;
-    private Integer version = null;
+    private String stableId;
+    private Integer version;
+    private FormState formState;
+    private AccessControl accessControl;
+    private String tags;
+    private Long iconId;
 
 }

@@ -1,0 +1,55 @@
+{
+  "id": 123,
+  "globalId": "FM123", 
+  "stableId": "stable123",
+  "version": 1,
+  "name": "Sample Form",
+  "tags": "tag1,tag2",
+  "formState": "PUBLISHED",
+  "accessControl": {
+    "ownerPermissionType": "WRITE",
+    "groupPermissionType": "READ", 
+    "worldPermissionType": "NONE"
+  },
+  "iconId": 456,
+  "fields": [
+    {
+      "id": 1,
+      "globalId": "FF1",
+      "name": "Sample Text Field",
+      "type": "String",
+      "lastModified": 1640995200000,
+      "index": 0,
+      "defaultValue": "default value"
+    },
+    {
+      "id": 2,
+      "globalId": "FF2", 
+      "name": "Sample Number Field",
+      "type": "Number",
+      "lastModified": 1640995200000,
+      "index": 1,
+      "min": 0.0,
+      "max": 100.0,
+      "decimalPlaces": 1,
+      "defaultValue": 10.5
+    },
+    {
+      "id": 3,
+      "globalId": "FF3",
+      "name": "Sample Choice Field", 
+      "type": "Choice",
+      "lastModified": 1640995200000,
+      "index": 2,
+      "multipleChoice": true,
+      "options": ["Option 1", "Option 2", "Option 3"],
+      "defaultOptions": ["Option 1", "Option 2"]
+    }
+  ],
+  "_links": [
+    {
+      "link": "http://localhost:8080/api/v1/forms/123",
+      "rel": "self"
+    }
+  ]
+}
