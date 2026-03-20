@@ -12,11 +12,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.time.Instant;
-
 /**
  * A FormField definition. This is an abstract type for all form field types.
  * The properties listed here are common to all types.
+ *
  * @author rspace
  */
 @Data

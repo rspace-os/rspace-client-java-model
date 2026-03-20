@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
   - `FormState` enum - Enumeration for form publishing states (NEW, PUBLISHED, UNPUBLISHED, OLD)
   - `ChoiceFormField` model - Checkbox field with multiple selection support
   - `DateFormField` model - Date input field with min/max validation
-  - `NumberFormField` model - Numeric field with range and decimal place 
+  - `NumberFormField` model - Numeric field with range and decimal places 
   - `RadioFormField` model - Radio button field for single selection
   - `StringFormField` model - Short text input field (max 255 characters)
   - `TextFormField` model - Long text field supporting HTML content
