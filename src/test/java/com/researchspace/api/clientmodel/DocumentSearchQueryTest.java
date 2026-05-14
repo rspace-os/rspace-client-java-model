@@ -27,9 +27,8 @@ public class DocumentSearchQueryTest extends AbstractModelTest {
 
 	@Test
 	public void test() throws JsonParseException, JsonMappingException, IOException {
-		System.err.println(SearchOperator.AND.toString());
 		DocumentSearchQuery query = readFileToClass(DocumentSearchQueryJson, DocumentSearchQuery.class);
-		assertEquals(2,query.getTerms().size());
+		assertEquals(2, query.getTerms().size());
 		assertEquals(SearchOperator.OR, query.getOperator());
 		
 		

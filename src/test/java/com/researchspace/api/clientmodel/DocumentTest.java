@@ -3,6 +3,7 @@ package com.researchspace.api.clientmodel;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,8 +30,20 @@ public class DocumentTest extends AbstractModelTest {
 	@Test
 	public void test() throws JsonParseException, JsonMappingException, IOException {
 		Document d = readFileToClass(documentJson, Document.class);
-		assertEquals(2,d.getFields().size());
-		System.err.println(d);
+		assertEquals(2, d.getFields().size());
+		assertEquals(23L, d.getId());
+		assertEquals("SD23", d.getGlobalId());
+		assertEquals("MyExperiment", d.getName());
+		assertNotNull(d.getCreated());
+		assertNotNull(d.getLastModified());
+		assertNotNull(d.getOwner());
+		assertEquals(1L, d.getOwner().getId());
+		assertEquals("bsmith", d.getOwner().getUsername());
+		assertNotNull(d.getForm());
+		assertEquals(123L, d.getForm().getId());
+		assertEquals(12L, d.getParentFolderId());
+		assertNotNull(d.getFields().get(0).getType());
+		assertNotNull(d.getFields().get(0).getName());
 	}
 
 }

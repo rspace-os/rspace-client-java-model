@@ -8,6 +8,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.researchspace.api.clientmodel.FormPost.ChoiceFieldPost;
@@ -44,6 +47,15 @@ public class FormPostTest {
 		.field(RadioFieldPost.builder().name("radios").options(radios).defaultOption(defaultRadio).build())
 		.build();
 		ObjectMapper reader = new ObjectMapper();
-		System.err.println(reader.writeValueAsString(toSubmit));
+		String json = reader.writeValueAsString(toSubmit);
+		assertNotNull(json);
+		assertTrue(json.contains("\"name\":\"formName\""));
+		assertTrue(json.contains("\"type\":\"Number\""));
+		assertTrue(json.contains("\"type\":\"Date\""));
+		assertTrue(json.contains("\"type\":\"String\""));
+		assertTrue(json.contains("\"type\":\"Text\""));
+		assertTrue(json.contains("\"type\":\"Choice\""));
+		assertTrue(json.contains("\"type\":\"Time\""));
+		assertTrue(json.contains("\"type\":\"Radio\""));
 	}
 }

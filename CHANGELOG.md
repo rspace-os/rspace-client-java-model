@@ -1,6 +1,29 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.100.0]
+
+### Breaking Changes
+
+- **`AbstractExportPost`**: renamed `scope()` → `getScopeString()` and `format()` → `getFormatString()` to avoid confusion with Lombok-generated getters. Update any callers of the old method names.
+- **`ApiShareInfo.sharedItemName`**: field type corrected from `Long` to `String`. Any code storing or passing `getSharedItemName()` as a `Long` must be updated.
+- **`FieldPut`**: removed the shadowed `content` field; `FieldPut` now inherits `content` from `FieldPost`. The `@AllArgsConstructor`-generated constructor signature changes from `FieldPut(String content, Long id)` to `FieldPut(Long id)`. Replace any positional constructor calls with the no-args constructor + `setContent()`.
+- **`ActivitySearchResult`, `DocumentSearchResult`, `FileSearchResult`, `FormSearchResult`, `ShareSearchResult`**: changed from `@Value` (immutable, all-args constructor) to `@Data @NoArgsConstructor` (mutable, setters). These are response POJOs and should not be constructed directly by callers, but any code that relied on the `@Value`-generated constructor will no longer compile.
+
+### Added
+
+- `UserInfo` model — full user information as returned by the sysadmin user-listing endpoint.
+- `UserSearchResult` model — paginated wrapper for `UserInfo` lists.
+- `GroupSearchResult` model — paginated wrapper for `GroupInfo` lists returned by the sysadmin group-listing endpoint.
+
+### Fixed
+
+- `@JsonIgnoreProperties(ignoreUnknown = true)` added to all response POJOs (via `IdentifiableNameable` and individually on non-hierarchy classes). Prevents `UnrecognizedPropertyException` when the server adds new fields in future releases.
+- `User.java`: replaced contradictory `@Value @NoArgsConstructor` combination with `@Data @NoArgsConstructor`. All six fields now deserialise correctly from JSON.
+- Removed stale swagger-codegen `DO NOT EDIT` headers from 12 source files that have been manually maintained.
+- `ISO8601DateSerialiser`: replaced per-call `SimpleDateFormat` allocation with a thread-safe static `DateTimeFormatter`.
+- `ApiShareInfo`: split the multi-field `Long` declaration; `sharedItemName` is now a separate `String` field.
+
 ## [1.99.1]
 
 ### Added
@@ -32,7 +55,7 @@ All notable changes to this project will be documented in this file.
 ## [1.98.1]
 
 ### Added
-- Introduced support for document:
+- Introduced support for a document:
   - `MoveRequest` model
 
 ### Changed

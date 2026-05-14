@@ -2,6 +2,7 @@ package com.researchspace.api.clientmodel;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +13,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ActivitySearchResultTest extends AbstractModelTest {
 	
@@ -24,6 +27,16 @@ public class ActivitySearchResultTest extends AbstractModelTest {
 
 	@AfterEach
 	public void tearDown() throws Exception {
+	}
+
+	@Test
+	void testOidFieldSerialisesCorrectly() throws JsonProcessingException {
+		ActivitySearchQuery q = ActivitySearchQuery.builder()
+				.oid("SD12345")
+				.domain(ActivityDomain.RECORD)
+				.build();
+		String json = new ObjectMapper().writeValueAsString(q);
+		assertTrue(json.contains("\"oid\":\"SD12345\""));
 	}
 
 	@Test

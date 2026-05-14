@@ -1,0 +1,8 @@
+{
+  "id": 42,
+  "username": "testuser",
+  "email": "test@example.com",
+  "firstName": "Test",
+  "lastName": "User",
+  "homeFolderId": 100
+}

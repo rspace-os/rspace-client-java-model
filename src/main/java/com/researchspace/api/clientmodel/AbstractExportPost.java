@@ -12,11 +12,11 @@ public class AbstractExportPost {
 	private ExportScope scope = ExportScope.USER;
 	private ExportFormat format =  ExportFormat.HTML;
 	
-	public String scope () {
+	public String getScopeString() {
 		return scope.name().toLowerCase();
 	}
-	
-	public String format () {
+
+	public String getFormatString() {
 		return format.name().toLowerCase();
 	}
 

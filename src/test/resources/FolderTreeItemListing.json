@@ -1,0 +1,42 @@
+{
+  "totalHits": 2,
+  "pageNumber": 0,
+  "parentId": 1,
+  "records": [
+    {
+      "id": 10,
+      "globalId": "FL10",
+      "name": "Subfolder A",
+      "type": "FOLDER",
+      "created": "2023-01-01T00:00:00.000Z",
+      "lastModified": "2023-06-01T00:00:00.000Z",
+      "parentFolderId": 1,
+      "owner": {
+        "id": 1,
+        "username": "bsmith",
+        "email": "bsmith@example.com",
+        "firstName": "Bob",
+        "lastName": "Smith"
+      },
+      "_links": []
+    },
+    {
+      "id": 11,
+      "globalId": "NB11",
+      "name": "My Notebook",
+      "type": "NOTEBOOK",
+      "created": "2023-02-01T00:00:00.000Z",
+      "lastModified": "2023-07-01T00:00:00.000Z",
+      "parentFolderId": 1,
+      "owner": {
+        "id": 1,
+        "username": "bsmith",
+        "email": "bsmith@example.com",
+        "firstName": "Bob",
+        "lastName": "Smith"
+      },
+      "_links": []
+    }
+  ],
+  "_links": []
+}

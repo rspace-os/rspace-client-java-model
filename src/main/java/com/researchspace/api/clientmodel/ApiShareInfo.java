@@ -2,6 +2,7 @@ package com.researchspace.api.clientmodel;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -13,10 +14,14 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApiShareInfo  {
-	
-	private Long id, sharedItemId,sharedItemName;
-	private String sharedTargetType, permission;
+
+	private Long id;
+	private Long sharedItemId;
+	private String sharedItemName;
+	private String sharedTargetType;
+	private String permission;
 
 
 }
