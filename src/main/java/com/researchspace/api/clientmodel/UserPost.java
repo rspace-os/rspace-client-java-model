@@ -34,7 +34,7 @@ public  class UserPost {
 	@Size(min=1)
 	private String affiliation;
 	
-	// Server constraint: 16–32 characters; see com.researchspace.api.v1.model.ApiUserPost for exact validation
+	// Server accepts 16–32 characters for the API key field.
 	@Size(min = 16, max = 32)
 	private String apiKey;
 	
