@@ -51,7 +51,7 @@ public class MoveRequestTest {
                 .build();
         ObjectMapper om = new ObjectMapper();
         String json = om.writeValueAsString(original);
-        MoveRequest deserialized = om.readValue(json, MoveRequest.class);
-        assertEquals(original, deserialized);
+        MoveRequest deserialised = om.readValue(json, MoveRequest.class);
+        assertEquals(original, deserialised);
     }
 }

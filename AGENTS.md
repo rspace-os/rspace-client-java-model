@@ -44,12 +44,15 @@ Used for deserialisation. Must survive unknown fields from future server release
 | `Form` | `FormInfo` | `@Data @NoArgsConstructor @SuperBuilder` | `@JsonPropertyOrder` |
 | `FormInfo` | `IdentifiableNameable` | `@Data @NoArgsConstructor @SuperBuilder` | `@JsonPropertyOrder` |
 | `GroupInfo` | `IdentifiableNameable` | `@Data @NoArgsConstructor` | — |
-| `User` | — | **see BUGS section** | — |
-| `ActivitySearchResult` | `PaginatedResultList` | `@Value` | — |
-| `DocumentSearchResult` | `PaginatedResultList` | `@Value` | — |
-| `FileSearchResult` | `PaginatedResultList` | `@Value` | — |
-| `FormSearchResult` | `PaginatedResultList` | `@Value` | — |
-| `ShareSearchResult` | `PaginatedResultList` | `@Value` | — |
+| `User` | — | `@Data @NoArgsConstructor` | — |
+| `ActivitySearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
+| `DocumentSearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
+| `FileSearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
+| `FormSearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
+| `ShareSearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
+| `UserInfo` | `IdentifiableNameable` | `@Data @NoArgsConstructor` | — |
+| `UserSearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
+| `GroupSearchResult` | `PaginatedResultList` | `@Data @NoArgsConstructor` | — |
 
 ### Request POJOs (what the client sends to the server)
 
@@ -69,7 +72,7 @@ Used for serialisation only. `@Builder` pattern for clean construction at call s
 
 ```
 Linkable                     ← _links list + getLinkByType()
-  └── PaginatedResultList    ← totalHits, pageNumber
+  └── PaginatedResultList    ← totalHits, pageNumber, pageSize
   └── IdentifiableNameable   ← id, globalId, name
         └── DocumentInfo     ← created, lastModified, tags, form, owner, parentFolderId
               └── Document   ← fields: List<Field>
@@ -123,23 +126,14 @@ Only add to `inventory/` if it is a base type used by multiple concrete classes.
 **Response POJOs** use: `@Data @NoArgsConstructor` (+ `@EqualsAndHashCode(callSuper=true)` for subclasses)
 **Request POJOs** use: `@Data @Builder @NoArgsConstructor @AllArgsConstructor`
 **Abstract base classes** use: `@Data @NoArgsConstructor @SuperBuilder`
-**Immutable search results** use: `@Value @EqualsAndHashCode(callSuper=true)` — see note below
+**Search result list wrappers** use: `@Data @NoArgsConstructor @EqualsAndHashCode(callSuper=true)`
 
-### `@Value` vs `@Data` — know the difference
+### `@Value` — do not use for response POJOs
 
 `@Value` generates an immutable class: all fields `final`, no setters, all-args constructor.
-Jackson cannot deserialise into a `@Value` class without a custom deserialiser because
-there are no setters and the all-args constructor requires every field by position.
+Jackson cannot deserialise into a `@Value` class without a custom deserialiser.
 
-**Only use `@Value` for classes where you are certain Jackson will never try to deserialise them.**
-
-Current `@Value` classes: `ActivitySearchResult`, `DocumentSearchResult`,
-`FileSearchResult`, `FormSearchResult`, `ShareSearchResult`.
-These work because `AbstractModelTest.readFileToClass()` disables `FAIL_ON_UNKNOWN_PROPERTIES`
-and the fields are initialised to `new ArrayList<>()` which Jackson appends to.
-This is fragile — see IMPROVEMENT.md item 1.1 for the correct fix.
-
-**`User.java` uses `@Value @NoArgsConstructor` which is a bug — see IMPROVEMENT.md item 1.3.**
+**Never use `@Value` on any class that Jackson needs to deserialise.**
 
 ### `@Singular` — use for list fields in request builder classes
 

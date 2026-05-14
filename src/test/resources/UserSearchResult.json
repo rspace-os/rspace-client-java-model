@@ -1,0 +1,16 @@
+{
+  "totalHits": 1,
+  "pageNumber": 0,
+  "pageSize": 20,
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@example.com",
+      "firstName": "Admin",
+      "lastName": "User",
+      "homeFolderId": 5
+    }
+  ],
+  "_links": []
+}

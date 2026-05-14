@@ -32,6 +32,7 @@ public class DocumentSearchResultTest extends AbstractModelTest {
 		DocumentSearchResult searchTerm = readFileToClass(DocumentSearchResultJson, DocumentSearchResult.class);
 		assertEquals(0, searchTerm.getPageNumber().intValue());
 		assertEquals(8, searchTerm.getTotalHits().intValue());
+		assertEquals(10, searchTerm.getPageSize().intValue());
 		assertNotNull(searchTerm.getDocuments());
 	}
 

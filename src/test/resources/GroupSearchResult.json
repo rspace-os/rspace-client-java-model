@@ -1,0 +1,16 @@
+{
+  "totalHits": 1,
+  "pageNumber": 0,
+  "pageSize": 20,
+  "groups": [
+    {
+      "id": 10,
+      "globalId": "GP10",
+      "name": "My Lab Group",
+      "type": "LAB_GROUP",
+      "sharedFolderId": 99,
+      "members": []
+    }
+  ],
+  "_links": []
+}

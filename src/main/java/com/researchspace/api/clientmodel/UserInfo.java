@@ -4,17 +4,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * Full user information as returned by the sysadmin user-listing endpoint.
- * @since 1.5
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserInfo extends IdentifiableNameable {
 
+    private String username;
     private String email;
     private String firstName;
     private String lastName;

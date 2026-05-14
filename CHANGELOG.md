@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 
 - **`AbstractExportPost`**: renamed `scope()` → `getScopeString()` and `format()` → `getFormatString()` to avoid confusion with Lombok-generated getters. Update any callers of the old method names.
 - **`ApiShareInfo.sharedItemName`**: field type corrected from `Long` to `String`. Any code storing or passing `getSharedItemName()` as a `Long` must be updated.
-- **`FieldPut`**: removed the shadowed `content` field; `FieldPut` now inherits `content` from `FieldPost`. The `@AllArgsConstructor`-generated constructor signature changes from `FieldPut(String content, Long id)` to `FieldPut(Long id)`. Replace any positional constructor calls with the no-args constructor + `setContent()`.
+- **`FieldPut`**: removed the locally-shadowed `content` field; `FieldPut` now inherits `content` from `FieldPost`. The explicit two-arg constructor `FieldPut(String content, Long id)` is preserved, so existing callers will continue to compile. However, `equals()`/`hashCode()` no longer compare two separate `content` fields, and any code that set the shadowed field via reflection will need to update to the inherited field.
 - **`ActivitySearchResult`, `DocumentSearchResult`, `FileSearchResult`, `FormSearchResult`, `ShareSearchResult`**: changed from `@Value` (immutable, all-args constructor) to `@Data @NoArgsConstructor` (mutable, setters). These are response POJOs and should not be constructed directly by callers, but any code that relied on the `@Value`-generated constructor will no longer compile.
 
 ### Added

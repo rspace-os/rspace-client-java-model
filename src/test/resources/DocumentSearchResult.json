@@ -1,6 +1,7 @@
 {
   "totalHits" : 8,
   "pageNumber" : 0,
+  "pageSize" : 10,
   "documents" : [ {
     "id" : 476,
     "globalId" : "SD476",
