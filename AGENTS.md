@@ -168,8 +168,7 @@ The `AbstractModelTest` configures Jackson with:
 - `FAIL_ON_UNKNOWN_PROPERTIES` disabled
 
 The production `BaseApiClientImpl` in `rspace-api-acceptance` configures the same
-enum handling but does NOT yet disable `FAIL_ON_UNKNOWN_PROPERTIES` — see
-`rspace-api-acceptance` IMPROVEMENT.md item 1.2.
+enum handling but does NOT yet disable `FAIL_ON_UNKNOWN_PROPERTIES`.
 
 ### `ISO8601DateSerialiser` — use for date fields sent TO the server
 
@@ -249,7 +248,7 @@ a minimal valid JSON that exercises the fields you care about.
 
 1. **Decide which category** it belongs to (response POJO, request POJO, base class, inventory base)
 2. **Choose Lombok annotations** from the taxonomy table above — do not invent new combinations
-3. **Add `@JsonIgnoreProperties(ignoreUnknown = true)`** on response POJOs — see IMPROVEMENT.md
+3. **Add `@JsonIgnoreProperties(ignoreUnknown = true)`** on response POJOs
 4. **Add a JSON fixture** in `src/test/resources/` or use serialisation roundtrip test
 5. **Write a unit test** in `src/test/java/com/researchspace/api/clientmodel/`
 6. **Verify against dev source** before adding fields not in the current Swagger:

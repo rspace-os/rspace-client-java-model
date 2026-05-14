@@ -6,6 +6,7 @@
   "email": "jsmith@lab.org",
   "firstName": "John",
   "lastName": "Smith",
+  "role": "ROLE_USER",
   "affiliation": "Acme Labs",
   "enabled": true,
   "homeFolderId": 200,

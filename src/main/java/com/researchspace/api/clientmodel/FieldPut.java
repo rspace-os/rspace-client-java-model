@@ -9,7 +9,7 @@ import lombok.NonNull;
  * Extends FieldPost with a field Id property to specify the Field whose content is to be updated.
  */
 @Data
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor
 public class FieldPut extends FieldPost {
 	/**

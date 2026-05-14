@@ -16,6 +16,6 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FormSearchResult extends PaginatedResultList {
 
-    List<FormInfo> forms = new ArrayList<>();
+    private List<FormInfo> forms = new ArrayList<>();
 
 }

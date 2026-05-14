@@ -18,6 +18,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserSearchResult extends PaginatedResultList {
-    private List<User> users = new ArrayList<>();
+    private List<UserInfo> users = new ArrayList<>();
 
 }

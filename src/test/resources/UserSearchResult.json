@@ -5,11 +5,16 @@
   "users": [
     {
       "id": 1,
-      "username": "admin",
-      "email": "admin@example.com",
-      "firstName": "Admin",
-      "lastName": "User",
-      "homeFolderId": 5
+      "globalId": "U1",
+      "name": "jdoe",
+      "username": "jdoe",
+      "email": "jdoe@lab.org",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "role": "ROLE_PI",
+      "affiliation": "Research Lab",
+      "enabled": true,
+      "homeFolderId": 10
     }
   ],
   "_links": []

@@ -20,6 +20,16 @@ public class UserSearchResultTest extends AbstractModelTest {
         assertEquals(20, result.getPageSize().intValue());
         assertNotNull(result.getUsers());
         assertEquals(1, result.getUsers().size());
-        assertEquals("admin", result.getUsers().get(0).getUsername());
+
+        UserInfo user = result.getUsers().get(0);
+        assertEquals(1L, user.getId());
+        assertEquals("U1", user.getGlobalId());
+        assertEquals("jdoe", user.getUsername());
+        assertEquals("jdoe@lab.org", user.getEmail());
+        assertEquals("Jane", user.getFirstName());
+        assertEquals("Doe", user.getLastName());
+        assertEquals(UserRole.ROLE_PI, user.getRole());
+        assertEquals("Research Lab", user.getAffiliation());
+        assertEquals(10L, user.getHomeFolderId());
     }
 }

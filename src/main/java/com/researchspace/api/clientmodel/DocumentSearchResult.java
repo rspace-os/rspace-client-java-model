@@ -19,6 +19,6 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DocumentSearchResult extends PaginatedResultList {
 
-    List<DocumentInfo> documents = new ArrayList<>();
+    private List<DocumentInfo> documents = new ArrayList<>();
 
 }
