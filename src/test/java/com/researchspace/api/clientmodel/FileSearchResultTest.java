@@ -32,6 +32,7 @@ public class FileSearchResultTest extends AbstractModelTest {
 		FileSearchResult d = readFileToClass(FileSearchResultJson, FileSearchResult.class);
 		assertEquals(0, d.getPageNumber().intValue());
 		assertEquals(8, d.getTotalHits().intValue());
+		assertEquals(10, d.getPageSize().intValue());
 		assertNotNull(d.getFiles());
 	}
 

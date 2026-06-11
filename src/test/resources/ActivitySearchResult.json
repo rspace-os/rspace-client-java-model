@@ -1,6 +1,7 @@
 {
   "totalHits": 1,
   "pageNumber": 0,
+  "pageSize": 10,
   "activities": [
     {
       "username": "bob1234",

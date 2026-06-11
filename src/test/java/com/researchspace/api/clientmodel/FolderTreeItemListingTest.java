@@ -19,6 +19,7 @@ public class FolderTreeItemListingTest extends AbstractModelTest {
         assertNotNull(listing);
         assertEquals(2L, listing.getTotalHits());
         assertEquals(0, listing.getPageNumber());
+        assertEquals(10, listing.getPageSize().intValue());
         assertEquals(1L, listing.getParentId());
         assertFalse(listing.getRecords().isEmpty());
     }

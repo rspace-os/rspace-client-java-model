@@ -14,12 +14,12 @@ public class AbstractExportPost {
 	private ExportFormat format =  ExportFormat.HTML;
 	
 	@JsonIgnore
-	public String getScopeString() {
+	public String getScopeAsString() {
 		return scope.name().toLowerCase();
 	}
 
 	@JsonIgnore
-	public String getFormatString() {
+	public String getFormatAsString() {
 		return format.name().toLowerCase();
 	}
 

@@ -44,6 +44,7 @@ public class ActivitySearchResultTest extends AbstractModelTest {
 		ActivitySearchResult searchRes = readFileToClass(ActivitySearchResultJson, ActivitySearchResult.class);
 		assertEquals(0,searchRes.getPageNumber().intValue());
 		assertEquals(1,searchRes.getTotalHits().intValue());
+		assertEquals(10,searchRes.getPageSize().intValue());
 		assertNotNull(searchRes.getActivities().get(0).getTimestamp());	
 		Map<String,Object> payload = searchRes.getActivities().get(0).getPayload();
 		assertNotNull(payload.get("data"));

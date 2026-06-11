@@ -35,9 +35,7 @@ public class UserInfoTest extends AbstractModelTest {
     @Test
     void testUserInfoIgnoresUnknownFields() throws IOException {
         String json = "{\"id\":1,\"globalId\":\"U1\",\"name\":\"testuser\",\"username\":\"testuser\",\"unknownFutureField\":\"some value\"}";
-        UserInfo user = new ObjectMapper()
-                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-                .readValue(json, UserInfo.class);
+        UserInfo user = new ObjectMapper().readValue(json, UserInfo.class);
         assertNotNull(user);
         assertEquals(1L, user.getId());
         assertEquals("testuser", user.getUsername());

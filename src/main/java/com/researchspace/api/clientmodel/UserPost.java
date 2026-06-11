@@ -34,7 +34,6 @@ public  class UserPost {
 	@Size(min=1)
 	private String affiliation;
 	
-	// Server accepts 16–32 characters for the API key field.
 	@Size(min = 16, max = 32)
 	private String apiKey;
 	

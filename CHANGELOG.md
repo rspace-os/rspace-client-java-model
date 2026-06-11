@@ -5,25 +5,41 @@ All notable changes to this project will be documented in this file.
 
 ### Breaking Changes
 
-- **`AbstractExportPost`**: renamed `scope()` → `getScopeString()` and `format()` → `getFormatString()` to avoid confusion with Lombok-generated getters. Update any callers of the old method names.
-- **`ApiShareInfo.sharedItemName`**: field type corrected from `Long` to `String`. Any code storing or passing `getSharedItemName()` as a `Long` must be updated.
-- **`FieldPut`**: removed the locally-shadowed `content` field; `FieldPut` now inherits `content` from `FieldPost`. The explicit two-arg constructor `FieldPut(String content, Long id)` is preserved, so existing callers will continue to compile. However, `equals()`/`hashCode()` no longer compare two separate `content` fields, and any code that set the shadowed field via reflection will need to update to the inherited field.
-- **`ActivitySearchResult`, `DocumentSearchResult`, `FileSearchResult`, `FormSearchResult`, `ShareSearchResult`**: changed from `@Value` (immutable, all-args constructor) to `@Data @NoArgsConstructor` (mutable, setters). These are response POJOs and should not be constructed directly by callers, but any code that relied on the `@Value`-generated constructor will no longer compile.
-- **`User.java`**: replaced `@Value @NoArgsConstructor` with `@Data @NoArgsConstructor`. The `@Value`-generated all-args constructor is removed; any code using positional construction (`new User(id, username, …)`) will no longer compile.
-- **`ISO8601DateSerialiser`**: dates are now always serialised in UTC (previously used the JVM default timezone). Any `Date` value whose local-timezone calendar date differs from its UTC calendar date will now serialise differently. Ensure all `Date` values passed to `DateFormField` represent midnight UTC if exact date identity matters.
+- **`AbstractExportPost`** — `scope()` renamed to `getScopeAsString()`, `format()` renamed to `getFormatAsString()`.
+  Update any callers of the old method names.
+
+- **`ApiShareInfo.sharedItemName`** — field type corrected from `Long` to `String`.
+  Update any code that stores or passes `getSharedItemName()` as a `Long`.
+
+- **`FieldPut`** — locally-shadowed `content` field removed; `FieldPut` now inherits `content` from `FieldPost`.
+  The two-arg constructor `FieldPut(String content, Long id)` is preserved so existing callers still compile.
+  However, `equals()`/`hashCode()` no longer compare two separate `content` fields, and any code that set
+  the shadowed field via reflection must switch to the inherited field.
+
+- **`ActivitySearchResult`, `DocumentSearchResult`, `FileSearchResult`, `FormSearchResult`, `ShareSearchResult`** —
+  changed from `@Value` (immutable, all-args constructor) to `@Data @NoArgsConstructor` (mutable, no all-args constructor).
+  These are response POJOs and should not be constructed directly, but any code using the `@Value`-generated
+  constructor will no longer compile.
+
+- **`User`** — replaced `@Value @NoArgsConstructor` with `@Data @NoArgsConstructor`.
+  Any code using positional construction (`new User(id, username, …)`) will no longer compile.
+
+- **`ISO8601DateSerialiser`** — dates are now always serialised in UTC (previously used the JVM default timezone).
+  A `Date` value whose local-timezone calendar date differs from its UTC date will now serialise differently.
+  Ensure all `Date` values passed to `DateFormField` represent midnight UTC if exact date identity matters.
 
 ### Added
 
-- `UserInfo` model — full user information as returned by the sysadmin user-listing endpoint.
-- `UserSearchResult` model — paginated wrapper for `UserInfo` lists.
-- `GroupSearchResult` model — paginated wrapper for `GroupInfo` lists returned by the sysadmin group-listing endpoint.
+- `UserInfo` — full user information returned by the sysadmin user-listing endpoint.
+- `UserSearchResult` — paginated wrapper for `UserInfo` lists.
+- `GroupSearchResult` — paginated wrapper for `GroupInfo` lists returned by the sysadmin group-listing endpoint.
 
 ### Fixed
 
-- `@JsonIgnoreProperties(ignoreUnknown = true)` added to all response POJOs (via `IdentifiableNameable` and individually on non-hierarchy classes). Prevents `UnrecognizedPropertyException` when the server adds new fields in future releases.
-- Removed stale swagger-codegen `DO NOT EDIT` headers from 12 source files that have been manually maintained.
-- `ISO8601DateSerialiser`: replaced per-call `SimpleDateFormat` allocation with a thread-safe static `DateTimeFormatter`. See Breaking Changes for the associated timezone behaviour change.
-- `ApiShareInfo`: split the multi-field `Long` declaration; `sharedItemName` is now a separate `String` field.
+- `@JsonIgnoreProperties(ignoreUnknown = true)` added to all response POJOs. Prevents `UnrecognizedPropertyException`
+  when the server adds new fields in future releases.
+- `ISO8601DateSerialiser` — replaced per-call `SimpleDateFormat` with a thread-safe static `DateTimeFormatter`.
+- Removed stale swagger-codegen `DO NOT EDIT` headers from 12 source files.
 
 ## [1.99.1]
 

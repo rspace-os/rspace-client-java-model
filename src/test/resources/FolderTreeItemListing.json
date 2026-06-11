@@ -1,6 +1,7 @@
 {
   "totalHits": 2,
   "pageNumber": 0,
+  "pageSize": 10,
   "parentId": 1,
   "records": [
     {
