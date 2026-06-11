@@ -36,60 +36,9 @@ Linkable                     ← _links list + getLinkByType()
         └── RecordInfo (inventory) ← description, tags, sharingMode, barcodes
 ```
 
-
-## Lombok rules
-
-- **Response POJOs**: `@Data @NoArgsConstructor` (+ `@EqualsAndHashCode(callSuper=true) @ToString(callSuper=true)` for subclasses)
-- **Request POJOs**: `@Data @Builder @NoArgsConstructor @AllArgsConstructor`
-- **Abstract base classes**: `@Data @NoArgsConstructor @SuperBuilder`
-- **Search result wrappers**: `@Data @NoArgsConstructor @EqualsAndHashCode(callSuper=true) @ToString(callSuper=true)`
-
-Do not invent new Lombok combinations not listed here.
-
-**Never use `@Value` on a class that Jackson needs to deserialise.** `@Value` makes all fields `final` with no setters and generates an all-args constructor; Jackson cannot deserialise into it without a custom deserialiser.
-
-**`@Singular`** on a `List<T>` field in a `@Builder` class enables single-item chaining:
-```java
-DocumentPost.builder()
-    .field(new FieldPost("content1"))
-    .field(new FieldPost("content2"))
-    .build();
-```
-Used in: `DocumentPost.fields`, `GroupPost.users`, `ActivitySearchQuery.domains/actions/usernames`, `SharePost.itemsToShare/groups/users`.
-
----
-
-## Jackson rules
-
-### `@JsonIgnoreProperties(ignoreUnknown = true)`
-
-Add this to every response POJO. `IdentifiableNameable` already carries it, so its subclasses inherit it — but also add it explicitly to non-hierarchy response classes (`User`, `Status`, `ApiShareInfo`, etc.) for clarity.
-
-### `@JsonProperty` on field name mismatches
-
-Use `@JsonProperty("serverFieldName")` when the Java field name differs from what the server sends. Example: `MoveRequest.recordId` is annotated `@JsonProperty("docId")` because the server API field is `docId`.
-
-### `ISO8601DateSerialiser` — for date fields sent TO the server
-
-`DateFormField` and `DateFieldPost` use `@JsonSerialize(using = ISO8601DateSerialiser.class)` to serialise `Date` values as `"yyyy-MM-dd"` strings in UTC. Use this serialiser for any new date field the server expects in that format. Do not use it for response date fields — those deserialise as standard epoch millis.
-
-Dates are always serialised in UTC. Callers must ensure the logical date they intend to send matches the UTC date of the `Date` instance (e.g. set to midnight UTC).
-
-### `@JsonProperty("_links")` is on `Linkable`
-
-Do not re-annotate `_links` in subclasses.
-
-### `@JsonPropertyOrder` — for types in Swagger examples
-
-`Form`, `FormInfo`, and all `FormField` subclasses use `@JsonPropertyOrder` so serialised JSON matches documentation order. Add it to new types that will appear in API docs or test fixtures.
-
----
-
 ## Testing rules
 
 All tests use **JUnit 5** (`org.junit.jupiter.api.Test`). Do not use JUnit 4.
-
-Use **British spelling** throughout: `serialised`, `deserialised`, `initialised`, etc. This is consistent with the class name `ISO8601DateSerialiser` and all existing test method names.
 
 ### Two test patterns
 
@@ -105,21 +54,6 @@ ObjectMapper om = new ObjectMapper();
 String json = om.writeValueAsString(myObject);
 MyType deserialised = om.readValue(json, MyType.class);
 assertEquals(expected, deserialised.getSomeField());
-```
-
-### Testing `@JsonIgnoreProperties` correctly
-
-To verify that `@JsonIgnoreProperties(ignoreUnknown = true)` works on a class, use a plain `new ObjectMapper()` with no mapper-level configuration changes. If you disable `FAIL_ON_UNKNOWN_PROPERTIES` on the mapper instead, the test doesn't prove the annotation works:
-
-```java
-// Correct — tests the annotation
-String json = "{\"id\":1,\"unknownFutureField\":\"x\"}";
-MyType obj = new ObjectMapper().readValue(json, MyType.class);
-
-// Wrong — tests the mapper setting, not the annotation
-MyType obj = new ObjectMapper()
-    .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-    .readValue(json, MyType.class);
 ```
 
 ### Every new POJO needs at least one test

@@ -33,6 +33,9 @@ All notable changes to this project will be documented in this file.
 - `UserInfo` — full user information returned by the sysadmin user-listing endpoint.
 - `UserSearchResult` — paginated wrapper for `UserInfo` lists.
 - `GroupSearchResult` — paginated wrapper for `GroupInfo` lists returned by the sysadmin group-listing endpoint.
+- `SharePermissionUpdate` — request body for `PUT /share` (update permission of an existing share).
+- `DocumentShares` — response for `GET /share/document/{id}`; contains `directShares` and `notebookShares` as `List<DocumentShareEntry>`.
+- `DocumentShareEntry` — a single entry within a `DocumentShares` response.
 
 ### Fixed
 

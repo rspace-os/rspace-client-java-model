@@ -1,0 +1,19 @@
+{
+  "sharedDocId": 100,
+  "sharedDocName": "My Document",
+  "directShares": [
+    {
+      "shareId": 1,
+      "sharerId": 10,
+      "sharerName": "jsmith",
+      "recipientId": 20,
+      "recipientName": "Smith Group",
+      "recipientType": "GROUP",
+      "permission": "READ",
+      "parentId": 30,
+      "path": "/Shared/Smith Group",
+      "grandparentId": null
+    }
+  ],
+  "notebookShares": []
+}
