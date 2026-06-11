@@ -16,7 +16,7 @@ class FormSearchResultTest extends AbstractModelTest {
         FormSearchResult formSearchResult = readFileToClass(formSearchResultJson, FormSearchResult.class);
         assertEquals(0, formSearchResult.getPageNumber().intValue());
         assertEquals(5, formSearchResult.getTotalHits().intValue());
-        System.err.println(formSearchResult);
+        assertEquals(10, formSearchResult.getPageSize().intValue());
     }
 
 }

@@ -2,6 +2,7 @@ package com.researchspace.api.clientmodel;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class ApiSharingResult  {
 

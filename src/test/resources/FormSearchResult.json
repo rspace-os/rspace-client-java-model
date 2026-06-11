@@ -1,6 +1,7 @@
 {
   "totalHits": 5,
   "pageNumber": 0,
+  "pageSize": 10,
   "forms": [
     {
       "id": 32785,

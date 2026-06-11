@@ -1,5 +1,6 @@
 package com.researchspace.api.clientmodel;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 /**
@@ -9,6 +10,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExportJob extends Job {
 	
 	private  ExportJobResult result;

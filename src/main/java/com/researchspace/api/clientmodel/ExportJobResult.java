@@ -2,9 +2,8 @@ package com.researchspace.api.clientmodel;
 
 import java.util.Date;
 
-import lombok.AccessLevel;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.Setter;
 
 /**
  * An export job result
@@ -13,6 +12,7 @@ import lombok.Setter;
  *
  */
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExportJobResult implements Result {
 	
 	private String checksum;

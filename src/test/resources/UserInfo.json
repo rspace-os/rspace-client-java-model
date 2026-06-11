@@ -1,0 +1,14 @@
+{
+  "id": 101,
+  "globalId": "U101",
+  "name": "jsmith",
+  "username": "jsmith",
+  "email": "jsmith@lab.org",
+  "firstName": "John",
+  "lastName": "Smith",
+  "role": "ROLE_USER",
+  "affiliation": "Acme Labs",
+  "enabled": true,
+  "homeFolderId": 200,
+  "_links": []
+}

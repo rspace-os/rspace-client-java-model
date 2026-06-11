@@ -1,17 +1,21 @@
 package com.researchspace.api.clientmodel;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.Value;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Value
-@EqualsAndHashCode(callSuper=true)
-@ToString(callSuper=true)
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FormSearchResult extends PaginatedResultList {
 
-    List<FormInfo> forms = new ArrayList<>();
+    private List<FormInfo> forms = new ArrayList<>();
 
 }

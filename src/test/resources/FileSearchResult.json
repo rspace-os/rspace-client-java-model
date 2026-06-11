@@ -1,6 +1,7 @@
 {
   "totalHits" : 8,
   "pageNumber" : 0,
+  "pageSize" : 10,
   "files":[
   {
     "id": 1246,

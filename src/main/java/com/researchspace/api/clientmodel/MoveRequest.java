@@ -1,14 +1,15 @@
 package com.researchspace.api.clientmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Request to move a document or notebook to a target folder
+ * Request to move a document or notebook to a target folder.
+ * The server API field name is {@code docId}; the Java field is {@code recordId}.
  *
- * @author rspac
  * @since 1.98.0
  */
 @Data
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class MoveRequest {
 
+    @JsonProperty("docId")
     private Long recordId;
     private long sourceFolderId;
     private Long targetFolderId;

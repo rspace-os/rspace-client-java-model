@@ -10,15 +10,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * FileSearchResult
+ * Paginated list of users returned by the sysadmin user-listing endpoint.
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FileSearchResult extends PaginatedResultList {
-
-    private List<ApiFile> files = new ArrayList<>();
+public class UserSearchResult extends PaginatedResultList {
+    private List<UserInfo> users = new ArrayList<>();
 
 }

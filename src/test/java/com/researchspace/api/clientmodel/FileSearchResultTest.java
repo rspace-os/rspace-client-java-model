@@ -3,6 +3,7 @@ package com.researchspace.api.clientmodel;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,9 +30,10 @@ public class FileSearchResultTest extends AbstractModelTest {
 	@Test
 	public void test() throws JsonParseException, JsonMappingException, IOException {
 		FileSearchResult d = readFileToClass(FileSearchResultJson, FileSearchResult.class);
-		assertEquals(0,d.getPageNumber().intValue());
-		assertEquals(8,d.getTotalHits().intValue());
-		System.err.println(d);
+		assertEquals(0, d.getPageNumber().intValue());
+		assertEquals(8, d.getTotalHits().intValue());
+		assertEquals(10, d.getPageSize().intValue());
+		assertNotNull(d.getFiles());
 	}
 
 }

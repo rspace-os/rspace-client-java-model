@@ -1,0 +1,21 @@
+{
+  "totalHits": 1,
+  "pageNumber": 0,
+  "pageSize": 20,
+  "users": [
+    {
+      "id": 1,
+      "globalId": "U1",
+      "name": "jdoe",
+      "username": "jdoe",
+      "email": "jdoe@lab.org",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "role": "ROLE_PI",
+      "affiliation": "Research Lab",
+      "enabled": true,
+      "homeFolderId": 10
+    }
+  ],
+  "_links": []
+}

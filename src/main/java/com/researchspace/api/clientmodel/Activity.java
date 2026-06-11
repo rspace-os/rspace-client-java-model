@@ -3,6 +3,7 @@ package com.researchspace.api.clientmodel;
 import java.util.Date;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 /**
@@ -12,6 +13,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(of={"timestamp", "username", "domain","action"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Activity {
 
 	private Date timestamp;

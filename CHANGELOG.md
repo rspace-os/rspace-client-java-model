@@ -1,6 +1,49 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.100.0]
+
+### Breaking Changes
+
+- **`AbstractExportPost`** — `scope()` renamed to `getScopeAsString()`, `format()` renamed to `getFormatAsString()`.
+  Update any callers of the old method names.
+
+- **`ApiShareInfo.sharedItemName`** — field type corrected from `Long` to `String`.
+  Update any code that stores or passes `getSharedItemName()` as a `Long`.
+
+- **`FieldPut`** — locally-shadowed `content` field removed; `FieldPut` now inherits `content` from `FieldPost`.
+  The two-arg constructor `FieldPut(String content, Long id)` is preserved so existing callers still compile.
+  However, `equals()`/`hashCode()` no longer compare two separate `content` fields, and any code that set
+  the shadowed field via reflection must switch to the inherited field.
+
+- **`ActivitySearchResult`, `DocumentSearchResult`, `FileSearchResult`, `FormSearchResult`, `ShareSearchResult`** —
+  changed from `@Value` (immutable, all-args constructor) to `@Data @NoArgsConstructor` (mutable, no all-args constructor).
+  These are response POJOs and should not be constructed directly, but any code using the `@Value`-generated
+  constructor will no longer compile.
+
+- **`User`** — replaced `@Value @NoArgsConstructor` with `@Data @NoArgsConstructor`.
+  Any code using positional construction (`new User(id, username, …)`) will no longer compile.
+
+- **`ISO8601DateSerialiser`** — dates are now always serialised in UTC (previously used the JVM default timezone).
+  A `Date` value whose local-timezone calendar date differs from its UTC date will now serialise differently.
+  Ensure all `Date` values passed to `DateFormField` represent midnight UTC if exact date identity matters.
+
+### Added
+
+- `UserInfo` — full user information returned by the sysadmin user-listing endpoint.
+- `UserSearchResult` — paginated wrapper for `UserInfo` lists.
+- `GroupSearchResult` — paginated wrapper for `GroupInfo` lists returned by the sysadmin group-listing endpoint.
+- `SharePermissionUpdate` — request body for `PUT /share` (update permission of an existing share).
+- `DocumentShares` — response for `GET /share/document/{id}`; contains `directShares` and `notebookShares` as `List<DocumentShareEntry>`.
+- `DocumentShareEntry` — a single entry within a `DocumentShares` response.
+
+### Fixed
+
+- `@JsonIgnoreProperties(ignoreUnknown = true)` added to all response POJOs. Prevents `UnrecognizedPropertyException`
+  when the server adds new fields in future releases.
+- `ISO8601DateSerialiser` — replaced per-call `SimpleDateFormat` with a thread-safe static `DateTimeFormatter`.
+- Removed stale swagger-codegen `DO NOT EDIT` headers from 12 source files.
+
 ## [1.99.1]
 
 ### Added
@@ -32,7 +75,7 @@ All notable changes to this project will be documented in this file.
 ## [1.98.1]
 
 ### Added
-- Introduced support for document:
+- Introduced support for a document:
   - `MoveRequest` model
 
 ### Changed
